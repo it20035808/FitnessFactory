@@ -7,6 +7,7 @@ import Navbar from "./components/navbar.component"
 import main from "./components/main.component"
 
 import Equipment from "./components/Equipment.component";
+import EquipmentReport from "./components/EquipmentReport.component";
 import EquipmentDetails from "./components/EquipmentDetails.component";
 import EquipmentAdd from "./components/EquipmentAdd.component";
 import EquipmentEdit from "./components/EquipmentEdit.component";
@@ -23,11 +24,16 @@ export default class App extends Component {
       <Router>
         <div style={{ backgroundImage: `url(${Background})`, backgroundPosition: 'center', height: '1070px' }}>
           <div className='container'>
-            <Navbar />
+
+            {window.location.pathname !== '/equipment/report' &&
+              <Navbar />
+            }
+
             <br />
             <Route path="/" exact component={main} />
 
             <Route path="/equipment/" exact component={Equipment} />
+            <Route path="/equipment/report" exact component={EquipmentReport} />
             <Route path="/equipment/details/:id" exact component={EquipmentDetails} />
             <Route path="/equipment/add" exact component={EquipmentAdd} />
             <Route path="/equipment/edit/:id" exact component={EquipmentEdit} />

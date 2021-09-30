@@ -141,6 +141,9 @@ export default class Equipmentlist extends Component {
             <Col><h1>Equipments {this.state.equipments.length}</h1></Col>
 
             <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
+              <Link to={"/equipment/report"} target="_blank" rel="noopener noreferrer"><Button> Equipment Report </Button></Link></div></Col>
+
+            <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
               <Link to={"/equipment/add"}><Button> Add new equipment </Button></Link></div></Col>
           </Row>
 
@@ -168,7 +171,6 @@ export default class Equipmentlist extends Component {
 
             <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "right", alignItems: "right" }}>
               <button type="button" onClick={this.onChangeSort} className="btn btn-primary" >Sort by Next Repair Date</button></Col>
-
 
           </Row>
         </Container>
