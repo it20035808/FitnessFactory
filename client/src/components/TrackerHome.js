@@ -47,8 +47,7 @@ const result = trackers.filter((tracker) =>
 
     tracker.clientID.toLowerCase().includes(searchKey)||
     tracker.eventID.toLowerCase().includes(searchKey)||
-    tracker.sessionsCompleted.toLowerCase().includes(searchKey)||
-    tracker.caloriesBurnt.toLowerCase().includes(searchKey)
+    tracker.sessionsCompleted.toLowerCase().includes(searchKey)
 )
 
 this.setState({trackers:result})
@@ -95,7 +94,6 @@ handleSearchArea = (e) =>{
                         <th scope="col"><h5><center>Client ID</center></h5></th>
                         <th scope="col"><h5><center>Event ID</center></h5></th>
                         <th scope="col"><h5><center>Sessions Completed</center></h5></th>
-                        <th scope="col"><h5><center>Calories Burnt</center></h5></th>
                         <th scope="col"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</h5></th>
                     </tr> 
                 </thead>
@@ -111,7 +109,7 @@ handleSearchArea = (e) =>{
                                 </Link> 
                                 </td> 
                             <td><h6><center>{trackers.sessionsCompleted}</center></h6></td>
-                            <td><h6><center>{trackers.caloriesBurnt}</center></h6></td>        
+                               
                             <td>
                                 <Link className="btn btn-warning" to={`/editTracker/${trackers._id}`}>
                                     <i className="fas fa-edit"></i>&nbsp;Edit

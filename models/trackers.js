@@ -17,10 +17,11 @@ const trackerSchema = new mongoose.Schema({
         required:true 
     },
 
-    caloriesBurnt:{
+    calories:{
         type:String,
         required:true 
     }
+
 
 });
 

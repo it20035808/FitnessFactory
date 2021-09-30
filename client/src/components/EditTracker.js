@@ -129,16 +129,6 @@ export default class EditTracker extends Component {
                         required/>
                     </div>
 
-                    <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Calories Burnt</h5></label>
-                        <input type="text"
-                        className="form-control"
-                        name="caloriesBurnt"
-                        placeholder="Enter Calories"
-                        value={this.state.caloriesBurnt}
-                        onChange={this.handleInputChange}
-                        required/>
-                    </div>
 
                     &nbsp;&nbsp;
 

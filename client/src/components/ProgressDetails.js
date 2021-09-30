@@ -29,7 +29,7 @@ export default class ProgressDetails extends Component {
     }
 
     render() {
-        const {clientID,eventID,sessionsCompleted,caloriesBurnt} = this.state.tracker;
+        const {clientID,eventID,sessionsCompleted,calories} = this.state.tracker;
 
         return (
             <div style={{marginTop:'5px', backgroundImage: `url(${workout4})`,  backgroundPosition:'cover', backgroundSize:'cover' , width:'1250px', height:'600px'}}>
@@ -48,7 +48,7 @@ export default class ProgressDetails extends Component {
                 <dd className="col-sm-9"><h3>{sessionsCompleted}</h3><br/></dd>
 
                 <dt className="col-sm-3"><h3>Calories Burnt</h3></dt>
-                <dd className="col-sm-9"><h3>{caloriesBurnt}</h3><br/></dd>
+                <dd className="col-sm-9"><h3>{sessionsCompleted*calories}</h3><br/></dd>
                 
             </dl>  
             </div>

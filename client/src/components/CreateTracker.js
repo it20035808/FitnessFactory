@@ -12,6 +12,7 @@ export default class CreateTracker extends Component {
             clientID: "",
             eventID: "",
             sessionsCompleted: "",
+            calories:"",
             caloriesBurnt: ""
 
         }
@@ -31,13 +32,14 @@ export default class CreateTracker extends Component {
 
         e.preventDefault();
 
-        const { clientID, eventID, sessionsCompleted, caloriesBurnt } = this.state;
+        const { clientID, eventID, sessionsCompleted,calories, caloriesBurnt } = this.state;
 
         const data = {
 
             clientID: clientID,
             eventID: eventID,
             sessionsCompleted: sessionsCompleted,
+            calories: calories,
             caloriesBurnt: caloriesBurnt
         }
 
@@ -51,6 +53,7 @@ export default class CreateTracker extends Component {
                         clientID: "",
                         eventID: "",
                         sessionsCompleted: "",
+                        calories: "",
                         caloriesBurnt: ""
 
                     }
@@ -111,12 +114,12 @@ export default class CreateTracker extends Component {
                     </div>
 
                     <div className="container" style={{ marginBottom: '1px' }}>
-                        <label style={{ marginBottom: '5px' }}><h5>Calories Burnt</h5></label>
+                        <label style={{ marginBottom: '5px' }}><h5>Calories</h5></label>
                         <input type="text"
                             className="form-control"
-                            name="caloriesBurnt"
-                            placeholder="Enter Total Calories Burnt"
-                            value={this.state.caloriesBurnt}
+                            name="calories"
+                            placeholder="Enter Calories Burnt Per Session"
+                            value={this.state.calories}
                             onChange={this.handleInputChange}
                             required />
                     </div>
