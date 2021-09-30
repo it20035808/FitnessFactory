@@ -90,10 +90,11 @@ export default class EditPost extends Component {
             return <Redirect to={this.state.redirect} />
           }
         return (
-            <div className="container" style={{ backgroundImage: `url(${workout2})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'1100px', height:'570px'}}>
+            
+            <div className="container" style={{ backgroundImage: `url(${workout2})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'570px'}}>
                 <h1 className="container">Edit Event</h1>
                 <form onSubmit = {this.onSubmit}>
-
+                    
                    <br/>
                     <div className="container" style={{marginBottom:'5px'}}>
                         <label style={{marginBottom:'5px'}}><h5>Event</h5></label>
@@ -150,6 +151,8 @@ export default class EditPost extends Component {
                 </form>
             
             </div>
+            
+            
         );
     }
 }

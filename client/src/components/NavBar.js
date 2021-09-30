@@ -5,8 +5,6 @@ export default class NavBar extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor:'#e3f2fd'}}>
             <div className="container-fluid">
-                {/* <a class="navbar-brand">CRUD App using MERN stack
-                </a> */}
 
             <button className="navbar-toggler" type="button"
             data-bs-toggle="collapse"
@@ -18,15 +16,15 @@ export default class NavBar extends Component {
             <div className="collapse-navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="/"><h5>Gym Events</h5></a>
+                        <a className="nav-link" aria-current="page" href="/"> <h5><b>Gym Events</b></h5></a>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="/trackerHome"><h5>&nbsp;&nbsp;&nbsp;Tracker</h5></a>
+                        <a className="nav-link" aria-current="page" href="/trackerHome"> <h5><b>&nbsp;&nbsp;&nbsp;Tracker</b></h5></a>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="/eventHome"><h5>&nbsp;&nbsp;&nbsp;Summary</h5></a>
+                        <a className="nav-link" aria-current="page" href="/eventHome"> <h5><b>&nbsp;&nbsp;&nbsp;Summary</b></h5></a>
                     </li>
 
                 </ul>

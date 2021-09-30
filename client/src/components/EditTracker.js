@@ -91,7 +91,8 @@ export default class EditTracker extends Component {
             return <Redirect to={this.state.redirect} />
           }
         return (
-            <div className="container" style={{ backgroundImage: `url(${workout7})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'1100px', height:'600px'}}>
+            
+            <div className="container" style={{ backgroundImage: `url(${workout7})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'600px'}}>
                 <h1 className="container">Edit Tracker</h1>
                 <form onSubmit = {this.onSubmit}>
 
@@ -140,6 +141,7 @@ export default class EditTracker extends Component {
                 </form>
             
             </div>
+
         );
     }
 }

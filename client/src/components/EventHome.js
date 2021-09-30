@@ -12,15 +12,15 @@ class EventHome extends Component {
         return (
             
             <div className="card" style={{ height: '100px', width: '900px' }}><br/>
-                <br/><img src={summary1} style={{ height: '300px', width: '900px' }} /><br/>
+                <br/><img src={summary1} style={{ height: '300px', width: '1400px' }} /><br/>
                 <div className="card-body">
-                    <h2 className="card-title">Yoga Event</h2><br />
-                    <p className="card-text"><h6>Specially designed for senior citizens.</h6></p>
+                    <h1 className="card-title"><b>Yoga Event</b></h1><br />
+                    <p className="card-text"><h4>Specially designed for senior citizens.</h4></p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item"><h6>Event ID : 1</h6></li>
-                    <li className="list-group-item"><h6>10 sessions of 30 minutes each</h6></li>
-                    <li className="list-group-item"><h6>150 calories burnt per session</h6></li>
+                    <li className="list-group-item"><h5>Event ID : 1</h5></li>
+                    <li className="list-group-item"><h5>10 sessions of 30 minutes each</h5></li>
+                    <li className="list-group-item"><h5>150 calories burnt per session</h5></li>
                 </ul>
                 <div className="card-body">
                     <a href="https://www.youtube.com/watch?v=vbgxIwQoyN4" className="card-link">Warm Up</a>
@@ -28,16 +28,16 @@ class EventHome extends Component {
                     <a href="https://www.youtube.com/watch?v=CY6QP4ofwx4" className="card-link">Cool Down</a>
                 </div>
 
-                <br /><br />
-                <img src={summary2} style={{ height: '300px', width: '900px' }} /><br />
+                <br/><br/><br/>
+                <img src={summary2} style={{ height: '300px', width: '1400px' }} /><br />
                 <div className="card-body">
-                    <h2 className="card-title">Zumba Event</h2><br />
-                    <p className="card-text"><h6>Specially designed for women.</h6></p>
+                    <h1 className="card-title">Zumba Event</h1><br />
+                    <p className="card-text"><h4>Specially designed for women.</h4></p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item"><h6>Event ID : 2</h6></li>
-                    <li className="list-group-item"><h6>15 sessions of 45 minutes each</h6></li>
-                    <li className="list-group-item"><h6>300 calories burnt per session</h6></li>
+                    <li className="list-group-item"><h5>Event ID : 2</h5></li>
+                    <li className="list-group-item"><h5>15 sessions of 45 minutes each</h5></li>
+                    <li className="list-group-item"><h5>300 calories burnt per session</h5></li>
                 </ul>
                 <div className="card-body">
                     <a href="https://www.youtube.com/watch?v=N1zTPfkM7f8" className="card-link">Warm Up</a>
@@ -45,16 +45,16 @@ class EventHome extends Component {
                     <a href="https://www.youtube.com/watch?v=QQVwuTQ8rwo" className="card-link">Cool Down</a>
                 </div>
 
-                <br /><br />
-                <img src={summary3} style={{ height: '300px', width: '900px' }} /><br />
+                <br/><br/><br/>
+                <img src={summary3} style={{ height: '300px', width: '1400px' }} /><br />
                 <div className="card-body">
-                    <h2 className="card-title">Aerobics</h2><br />
-                    <p className="card-text"><h6>Specially designed for teens.</h6></p>
+                    <h1 className="card-title">Aerobics</h1><br />
+                    <p className="card-text"><h4>Specially designed for teens.</h4></p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item"><h6>Event ID : 6</h6></li>
-                    <li className="list-group-item"><h6>10 sessions of 45 minutes each</h6></li>
-                    <li className="list-group-item"><h6>200 calories burnt per session</h6></li>
+                    <li className="list-group-item"><h5>Event ID : 6</h5></li>
+                    <li className="list-group-item"><h5>10 sessions of 45 minutes each</h5></li>
+                    <li className="list-group-item"><h5>200 calories burnt per session</h5></li>
                 </ul>
                 <div className="card-body">
                     <a href="https://www.youtube.com/watch?v=a44ayeoSfKM" className="card-link">Warm Up</a>
@@ -62,16 +62,16 @@ class EventHome extends Component {
                     <a href="https://www.youtube.com/watch?v=W-sKDMG3hko" className="card-link">Cool Down</a>
                 </div>
 
-                <br /><br />
-                <img src={summary4} style={{ height: '300px', width: '900px' }} /><br />
+                <br/><br/><br/>
+                <img src={summary4} style={{ height: '300px', width: '1400px' }} /><br />
                 <div className="card-body">
-                    <h2 className="card-title">Cardio Event</h2><br />
-                    <p className="card-text"><h6>Specially designed for beginners.</h6></p>
+                    <h1 className="card-title">Cardio Event</h1><br />
+                    <p className="card-text"><h4>Specially designed for beginners.</h4></p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item"><h6>Event ID : 7</h6></li>
-                    <li className="list-group-item"><h6>15 sessions of 30 minutes each</h6></li>
-                    <li className="list-group-item"><h6>150 calories burnt per session</h6></li>
+                    <li className="list-group-item"><h5>Event ID : 7</h5></li>
+                    <li className="list-group-item"><h5>15 sessions of 30 minutes each</h5></li>
+                    <li className="list-group-item"><h5>150 calories burnt per session</h5></li>
                 </ul>
                 <div className="card-body">
                     <a href="https://www.youtube.com/watch?v=7HuB5lHlhpA" className="card-link">Warm Up</a>
@@ -79,16 +79,16 @@ class EventHome extends Component {
                     <a href="https://www.youtube.com/watch?v=W5IiasNutB8" className="card-link">Cool Down</a>
                 </div>
 
-                <br /><br />
-                <img src={summary5} style={{ height: '300px', width: '900px' }} /><br />
+                <br/><br/><br/>
+                <img src={summary5} style={{ height: '300px', width: '1400px' }} /><br />
                 <div className="card-body">
-                    <h2 className="card-title">CrossFit Event</h2><br />
-                    <p className="card-text"><h6>Specially designed for professionals.</h6></p>
+                    <h1 className="card-title">CrossFit Event</h1><br />
+                    <p className="card-text"><h4>Specially designed for professionals.</h4></p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item"><h6>Event ID : 8</h6></li>
-                    <li className="list-group-item"><h6>20 sessions of 60 minutes each</h6></li>
-                    <li className="list-group-item"><h6>400 calories burnt per session</h6></li>
+                    <li className="list-group-item"><h5>Event ID : 8</h5></li>
+                    <li className="list-group-item"><h5>20 sessions of 60 minutes each</h5></li>
+                    <li className="list-group-item"><h5>400 calories burnt per session</h5></li>
                 </ul>
                 <div className="card-body">
                     <a href="https://www.youtube.com/watch?v=0t0EjTVQ-f4" className="card-link">Warm Up</a>
