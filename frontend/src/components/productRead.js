@@ -16,6 +16,7 @@ export default function ReadProduct() {
     }, [])
 
     const [ProductList, setProduct] = useState([]);
+    const [searchItem, setSearchItem] = useState("");
 
     const deleteProduct = (id) => {
         axios.delete(`http://localhost:8070/product/delete/${id}`).then((then => {
@@ -49,13 +50,22 @@ export default function ReadProduct() {
 
                 <div class="input-group rounded">
                     <input type="search" class="form-control rounded" placeholder="Enter Product name" aria-label="Search"
-                        aria-describedby="search-addon" />
+                        aria-describedby="search-addon"
+                        onChange={(e) => {
+                            setSearchItem(e.target.value);
+                        }} />
                     <span class="input-group-text border-0" id="search-addon">
                         <button type="button" class="btn btn-primary">Search</button>
                         <i class="fas fa-search"></i>
                     </span>
                 </div> <br />
-                {ProductList.map((val, key) => {
+                {ProductList.filter((val)=> {
+                    if (searchItem == "") {
+                        return val
+                    } else if (val.name.toLowerCase().includes(searchItem.toLowerCase()) || val.category.toLowerCase().includes(searchItem.toLowerCase())) {
+                        return val
+                    }
+                }).map((val, key) => {
 
                     return <div>
                         <table class="table table-dark">
