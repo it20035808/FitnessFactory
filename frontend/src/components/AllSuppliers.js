@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import background from "../gymb10.jpg";
 import { useHistory } from "react-router";
+import Swal from "sweetalert2";
 
 
 export default function ReadSupplier() {
@@ -14,10 +15,14 @@ export default function ReadSupplier() {
     }, [])
 
     const [SupplierList, setSupplier] = useState([]);
+    
 
     const deleteSupplier = (id) => {
         axios.delete(`http://localhost:8070/supplier/delete/${id}`).then((then => {
-            alert("Deleted succesfuly!");
+            Swal.fire({
+                title: "Deleted Successfully",
+                icon: 'success'
+            });
         }))
     };
 
