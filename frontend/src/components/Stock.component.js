@@ -138,8 +138,8 @@ export default class Stocklist extends Component {
         console.log(error);
       })
   }
-  
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   render() {
     return (
@@ -148,6 +148,10 @@ export default class Stocklist extends Component {
         <Container>
           <Row>
             <Col><h1>Products {this.state.stocks.length}</h1></Col>
+
+            <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
+              <Link to={"/stock/report"} target="_blank" rel="noopener noreferrer"><Button> Stock Report </Button></Link></div></Col>
+
             <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
               <Link to={"/stock/add"}><Button> Add new Product </Button></Link></div></Col>
           </Row>
@@ -176,7 +180,7 @@ export default class Stocklist extends Component {
               <button style={{ width: '190px' }} type="button" onClick={this.onClickSearch} className="btn btn-primary" >
                 Search</button></Col>
 
-                <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "right", alignItems: "right" }}>
+            <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "right", alignItems: "right" }}>
               <button style={{ width: '190px' }} type="button" onClick={this.onChangeSort} className="btn btn-primary" >Sort by Quantity</button></Col>
 
           </Row>
@@ -195,7 +199,7 @@ export default class Stocklist extends Component {
               <tr>
                 <td>{this.stockCostQuantityTotal()}</td>
                 <td>{this.stockPriceQuantityTotal()}</td>
-                <td>{this.stockPriceQuantityTotal()-this.stockCostQuantityTotal()}</td>
+                <td>{this.stockPriceQuantityTotal() - this.stockCostQuantityTotal()}</td>
               </tr>
             </tbody>
           </Table>

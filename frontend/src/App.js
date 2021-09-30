@@ -14,6 +14,7 @@ import EquipmentEdit from "./components/EquipmentEdit.component";
 import EquipmentEditDates from "./components/EquipmentEditDates.component"
 
 import Stock from "./components/Stock.component"
+import StockReport from "./components/StockReport.component";
 import StockDetails from "./components/StockDetails.component";
 import StockAdd from "./components/StockAdd.component";
 import StockEdit from "./components/StockEdit.component";
@@ -25,7 +26,7 @@ export default class App extends Component {
         <div style={{ backgroundImage: `url(${Background})`, backgroundPosition: 'center', height: '1070px' }}>
           <div className='container'>
 
-            {window.location.pathname !== '/equipment/report' &&
+            {window.location.pathname !== '/equipment/report' && window.location.pathname !== '/stock/report' &&
               <Navbar />
             }
 
@@ -40,6 +41,7 @@ export default class App extends Component {
             <Route path="/equipment/editdates/:id" exact component={EquipmentEditDates} />
 
             <Route path="/stock/" exact component={Stock} />
+            <Route path="/stock/report" exact component={StockReport} />
             <Route path="/stock/details/:id" exact component={StockDetails} />
             <Route path="/stock/add" exact component={StockAdd} />
             <Route path="/stock/edit/:id" component={StockEdit} />
