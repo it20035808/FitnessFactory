@@ -16,7 +16,7 @@ export default class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div className="container">
+                <div>
                     <NavBar/>
                     <Route path="/" exact component={Home}></Route>
                     <Route path="/add" component={CreatePost}></Route>

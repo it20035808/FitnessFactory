@@ -70,8 +70,9 @@ handleSearchArea = (e) =>{
 
     render() {
         return (
-            <div className="container" style={{ backgroundImage: `url(${workout1})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'1100px', height:'600px'}}>
+            <div style={{ backgroundImage: `url(${workout1})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'600px'}}>
               <br/>
+              <div className="container">
               <h4>All Events</h4>
 
             <div className="input-group">
@@ -82,6 +83,7 @@ handleSearchArea = (e) =>{
             name="searchQuery"
             aria-label="Search" 
             aria-describedby="search-addon"
+            style={{height:'40px', width:'30px'}}
             onChange={this.handleSearchArea} />
 
             
@@ -137,6 +139,8 @@ handleSearchArea = (e) =>{
             </table> 
 
             <button className="btn btn-success"><Link to="/add" style={{textDecoration:'none',color:'white'}}>Create New Event</Link></button>
+
+        </div>
 
         </div>
         )         
