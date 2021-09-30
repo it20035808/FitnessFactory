@@ -1,9 +1,3 @@
-# FitnessFactory
-Repository for IT project semester 2 year 2 SLIIT
+# Supplier Management
 
-Login is 
-username: Manager
-password: manager
-
-
-# Mata Fitness one yako 
+code for supplier management function
