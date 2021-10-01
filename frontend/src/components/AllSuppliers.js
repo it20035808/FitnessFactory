@@ -15,7 +15,7 @@ export default function ReadSupplier() {
     }, [])
 
     const [SupplierList, setSupplier] = useState([]);
-    
+    const [searchItem, setSearchItem] = useState("");
 
     const deleteSupplier = (id) => {
         axios.delete(`http://localhost:8070/supplier/delete/${id}`).then((then => {
@@ -45,13 +45,22 @@ export default function ReadSupplier() {
 
             <div class="input-group rounded">
                 <input type="search" class="form-control rounded" placeholder="Search " aria-label="Search"
-                    aria-describedby="search-addon" />
+                    aria-describedby="search-addon" 
+                    onChange={(e) => {
+                        setSearchItem(e.target.value);
+                    }}/>
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
-                    <a type="button" class="btn btn-info" href="http://localhost:3000/Search" > Search  </a>
+                    <button type="button" class="btn btn-primary">Search</button>   
                 </span>
             </div> <br />
-            {SupplierList.map((val, key) => {
+            {SupplierList.filter((val)=> {
+                    if (searchItem == "") {
+                        return val
+                    } else if (val.name.toLowerCase().includes(searchItem.toLowerCase()) || val.category.toLowerCase().includes(searchItem.toLowerCase())) {
+                        return val
+                    }
+                }).map((val, key) => {
 
                 return <div>
                     <table class="table table-dark">
