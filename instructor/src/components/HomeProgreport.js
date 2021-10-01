@@ -33,6 +33,7 @@ onDelete = (id) =>{
   })
 }
 
+
 filterData(progreports,searchKey){
   const result = progreports.filter((progreport) =>
   progreport.instructorID.toString().includes(searchKey)||
