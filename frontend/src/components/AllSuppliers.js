@@ -55,12 +55,12 @@ export default function ReadSupplier() {
                 </span>
             </div> <br />
             {SupplierList.filter((val)=> {
-                    if (searchItem == "") {
-                        return val
-                    } else if (val.name.toLowerCase().includes(searchItem.toLowerCase()) || val.category.toLowerCase().includes(searchItem.toLowerCase())) {
-                        return val
-                    }
-                }).map((val, key) => {
+                if (searchItem == "") {
+                    return val
+                } else if (val.supplierName.toLowerCase().includes(searchItem.toLocaleLowerCase())){
+                    return val
+                }
+            }).map((val, key) => {
 
                 return <div>
                     <table class="table table-dark">
