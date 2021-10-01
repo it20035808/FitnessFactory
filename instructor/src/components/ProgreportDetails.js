@@ -44,6 +44,9 @@ export default class ProgreportDetails extends Component {
 
                                 <dt className="col-sm-9"> <h3> Hours Worked In Month &nbsp;  </h3> </dt>
                                 <dd className="col-sm-3"> <h3> = &nbsp; {HoursWorkedInMonth} </h3> </dd>
+                                
+                                <dt className="col-sm-9"> <h3> Hours  remaining worked In Month &nbsp;  </h3> </dt>
+                                <dd className="col-sm-3"> <h3> = &nbsp; {HoursInMonth - HoursWorkedInMonth} </h3> </dd>
                             </dl>
                         </div>
                     </div>
