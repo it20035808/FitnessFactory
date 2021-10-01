@@ -219,8 +219,11 @@ export default class EquipmentAdd extends Component {
                             <Button variant="contained" type="submit" color="primary" startIcon={<SaveIcon />}>
                                 Save
                             </Button>
-                            <Button variant="contained" color="primary" onClick={this.onClickDemo}> demo </Button>
-                            <Button variant="contained" color="primary" onClick={this.onClickDemo1}> demo1 </Button>
+                            <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
+                                <Button variant="contained" color="primary" onClick={this.onClickDemo}> Demo 1 </Button>
+                                &nbsp;
+                                <Button variant="contained" color="primary" onClick={this.onClickDemo1}> Demo 2 </Button>
+                            </div>
                         </div>
                         <hr />
                     </form>
