@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 export default function EditProduct(props) {
 
-    const [ProductList, setProduct] = useState([]);
+    const [ProductInfo, setProductInfo] = useState([]);
 
     const [proData, setData] = useState({
         name:"",
@@ -18,7 +18,7 @@ export default function EditProduct(props) {
     useEffect(() => {
         const pid = props.match.params.id
         axios.get('http://localhost:8070/product/get/' + pid).then((res) => {
-            setProduct(res.data)
+            setProductInfo(res.data)
         }).catch((err) => {
             Swal.fire({
                 title: err,
@@ -62,7 +62,7 @@ export default function EditProduct(props) {
                         <div class="form-group">
                             <label for="name">Product Name</label>
                             <input type="text" className="form-control" id="name" placeholder="Enter product name"
-                                value={ProductList.name}
+                                value={ProductInfo.name}
                                 onChange={(e) => {
                                     handle(e);
                                 }} />
@@ -71,7 +71,7 @@ export default function EditProduct(props) {
                         <div className="form-group">
                             <label for="category">Product Category</label>
                             <input type="text" className="form-control" id="category" placeholder="Enter product category"
-                                value={ProductList.category}
+                                value={ProductInfo.category}
                                 onChange={(e) => {
                                     handle(e);
                                 }} />
@@ -80,7 +80,7 @@ export default function EditProduct(props) {
                         <div className="form-group">
                             <label for="description">Product Description</label>
                             <textarea className="form-control" id="description" rows="3" placeholder="Enter description"
-                                value={ProductList.description}
+                                value={ProductInfo.description}
                                 onChange={(e) => {
                                     handle(e);
                                 }}></textarea>
@@ -89,7 +89,7 @@ export default function EditProduct(props) {
                         <div className="form-group">
                             <label for="price">Product Price</label>
                             <input type="text" className="form-control" id="price" placeholder="Enter product price"
-                                value={ProductList.price}
+                                value={ProductInfo.price}
                                 onChange={(e) => {
                                     handle(e);
                                 }} />
