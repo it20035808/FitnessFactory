@@ -147,7 +147,7 @@ export default class Stocklist extends Component {
         <hr />
         <Container>
           <Row>
-            <Col><h1>Products {this.state.stocks.length}</h1></Col>
+            <Col xs={8}><h1>Products {this.state.stocks.length}</h1></Col>
 
             <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
               <Link to={"/stock/report"} target="_blank" rel="noopener noreferrer"><Button> Stock Report </Button></Link></div></Col>
@@ -156,6 +156,27 @@ export default class Stocklist extends Component {
               <Link to={"/stock/add"}><Button> Add new Product </Button></Link></div></Col>
           </Row>
 
+        </Container>
+        <div style={{ margin: '10px' }}>
+          <Table striped bordered hover variant="light">
+            <thead>
+              <tr>
+                <th>Total Cost (Rupees)</th>
+                <th>Total Value (Rupees)</th>
+                <th>Gross Profit (Rupees)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{this.stockCostQuantityTotal()}</td>
+                <td>{this.stockPriceQuantityTotal()}</td>
+                <td>{this.stockPriceQuantityTotal() - this.stockCostQuantityTotal()}</td>
+              </tr>
+            </tbody>
+          </Table>
+        </div>
+
+        <div style={{ margin: '10px' }}>
           <Row>
             <Col xs={4}><label>Search:</label>
               <input type="search" onChange={this.onChangeSearch} className="form-control rounded" placeholder="Search" aria-label="Search"
@@ -182,29 +203,9 @@ export default class Stocklist extends Component {
 
             <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "right", alignItems: "right" }}>
               <button style={{ width: '190px' }} type="button" onClick={this.onChangeSort} className="btn btn-primary" >Sort by Quantity</button></Col>
-
           </Row>
-        </Container>
-
-        <div style={{ margin: '30px' }}>
-          <Table striped bordered hover variant="light">
-            <thead>
-              <tr>
-                <th>Total Cost (Rupees)</th>
-                <th>Total Value (Rupees)</th>
-                <th>Gross Profit (Rupees)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{this.stockCostQuantityTotal()}</td>
-                <td>{this.stockPriceQuantityTotal()}</td>
-                <td>{this.stockPriceQuantityTotal() - this.stockCostQuantityTotal()}</td>
-              </tr>
-            </tbody>
-          </Table>
-          <hr />
         </div>
+        <hr />
 
         <div style={{ margin: '30px' }}>
           <Table striped bordered hover variant="light">

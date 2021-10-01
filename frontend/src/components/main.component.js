@@ -15,12 +15,12 @@ export default class main extends Component {
                         Inventory Management</h1>
                     <hr />
                     <Link style={{ margin: '40px', display: "flex", justifyContent: "center", alignItems: "center" }}
-                        to={"/equipment"}>
-                        <Button>View Equipments Details</Button>
-                    </Link>
-                    <Link style={{ margin: '40px', display: "flex", justifyContent: "center", alignItems: "center" }}
                         to={"/stock"}>
                         <Button>View Products Details</Button>
+                    </Link>
+                    <Link style={{ margin: '40px', display: "flex", justifyContent: "center", alignItems: "center" }}
+                        to={"/equipment"}>
+                        <Button>View Equipments Details</Button>
                     </Link>
                     <hr />
                 </Container>

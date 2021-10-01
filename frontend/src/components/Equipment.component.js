@@ -138,7 +138,7 @@ export default class Equipmentlist extends Component {
         <hr />
         <Container>
           <Row>
-            <Col><h1>Equipments {this.state.equipments.length}</h1></Col>
+            <Col xs={8}><h1>Equipments {this.state.equipments.length}</h1></Col>
 
             <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
               <Link to={"/equipment/report"} target="_blank" rel="noopener noreferrer"><Button> Equipment Report </Button></Link></div></Col>
@@ -146,7 +146,7 @@ export default class Equipmentlist extends Component {
             <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
               <Link to={"/equipment/add"}><Button> Add new equipment </Button></Link></div></Col>
           </Row>
-
+          <hr />
           <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
             <Col xs={4}><label>Search: </label>
               <input type="search" onChange={this.onChangeSearch} className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" /></Col>
@@ -166,15 +166,15 @@ export default class Equipmentlist extends Component {
                 }
               </select></Col>
 
-            <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "center", alignItems: "center"  }}>
-            <button style={{width:'180px'}} type="button" onClick={this.onClickSearch} className="btn btn-primary" >Search</button></Col>
+            <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <button style={{ width: '180px' }} type="button" onClick={this.onClickSearch} className="btn btn-primary" >Search</button></Col>
 
             <Col md="auto" style={{ marginTop: '23px', display: "flex", justifyContent: "right", alignItems: "right" }}>
               <button type="button" onClick={this.onChangeSort} className="btn btn-primary" >Sort by Next Repair Date</button></Col>
 
           </Row>
         </Container>
-
+        <hr />
         <div style={{ margin: '30px' }}>
           <Table striped bordered hover variant="light">
             <thead>
