@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import Button from 'react-bootstrap/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Table from 'react-bootstrap/Table';
 import Background from './back.jpg';
@@ -24,8 +24,8 @@ export default class StockDetails extends Component {
             unitCost: 0,
         }
     }
-    
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     componentDidMount() {
         axios.get('http://localhost:5000/Stock/' + this.props.match.params.id)
@@ -45,14 +45,14 @@ export default class StockDetails extends Component {
             })
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     deleteStock(id) {
         axios.delete('http://localhost:5000/stock/' + id)
             .then(response => { console.log(response.data) });
     }
-    
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     render() {
         return (
@@ -96,15 +96,17 @@ export default class StockDetails extends Component {
                             </tr>
                         </tbody>
                     </Table>
+                    <Link to={{ pathname: 'http://www.google.com/search?q=' + this.state.stockName }} target="_blank" rel="noopener noreferrer">
+                        <Button variant="secondary"> More Details... </Button></Link>
                     <hr />
                     <Container>
                         <Row style={{ marginTop: '10px' }}>
                             <Col><Link style={{ marginLeft: '50px', display: "flex", justifyContent: "left", alignItems: "left" }} to={"/stock/edit/" + this.props.match.params.id}>
-                                <Button variant="contained" color="primary" > Edit </Button>
+                                <Button variant="primary"> Edit </Button>
                             </Link></Col>
 
                             <Col><Link style={{ marginRight: '50px', display: "flex", justifyContent: "right", alignItems: "right" }} to="/stock" onClick={() => { this.deleteStock(this.props.match.params.id) }}>
-                                <Button variant="contained" color="secondary" startIcon={<DeleteIcon />}> Delete </Button>
+                                <Button variant="danger" startIcon={<DeleteIcon />}> Delete </Button>
                             </Link></Col>
                         </Row>
                     </Container>

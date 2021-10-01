@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Table from 'react-bootstrap/Table';
 import Background from './back.jpg';
+import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
@@ -28,7 +28,7 @@ export default class EquipmentDetails extends Component {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     componentDidMount() {
         axios.get('http://localhost:5000/equipment/' + this.props.match.params.id)
@@ -50,7 +50,7 @@ export default class EquipmentDetails extends Component {
 
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     deleteEquipment(id) {
         axios.delete('http://localhost:5000/equipment/' + id)
@@ -58,7 +58,7 @@ export default class EquipmentDetails extends Component {
 
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     getNumberOfDays(start) {
         const date = new Date(start);
@@ -70,8 +70,8 @@ export default class EquipmentDetails extends Component {
 
         return diffInDays;
     }
-    
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     render() {
         return (
@@ -115,19 +115,21 @@ export default class EquipmentDetails extends Component {
                             </tr>
                         </tbody>
                     </Table>
+                    <Link to={{ pathname: 'http://www.google.com/search?q=' + this.state.equipmentName }} target="_blank" rel="noopener noreferrer">
+                        <Button variant="secondary"> More Details... </Button></Link>
                     <hr />
                     <Container>
                         <Row style={{ marginTop: '10px' }}>
                             <Col><Link style={{ marginLeft: '50px', display: "flex", justifyContent: "left", alignItems: "left" }} to={"/equipment/edit/" + this.props.match.params.id}>
-                                <Button variant="contained" color="primary" > Edit </Button>
+                                <Button variant="primary"> Edit </Button>
                             </Link></Col>
 
                             <Col><Link style={{ display: "flex", justifyContent: "center", alignItems: "center" }} to={"/equipment/editdates/" + this.props.match.params.id}>
-                                <Button variant="contained" color="primary" > Update Dates </Button>
+                                <Button variant="primary"> Update Dates </Button>
                             </Link></Col>
 
                             <Col><Link style={{ marginRight: '50px', display: "flex", justifyContent: "right", alignItems: "right" }} to="/equipment" onClick={() => { this.deleteEquipment(this.props.match.params.id) }}>
-                                <Button variant="contained" color="secondary" startIcon={<DeleteIcon />}> Delete </Button>
+                                <Button variant="danger" startIcon={<DeleteIcon />}> Delete </Button>
                             </Link></Col>
                         </Row>
                     </Container>
