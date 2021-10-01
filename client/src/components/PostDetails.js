@@ -32,22 +32,22 @@ export default class PostDetails extends Component {
         const {eventID,event,description,eventCategory,calories} = this.state.post;
 
         return (
-            <div style={{marginTop:'20px', backgroundImage: `url(${workout6})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'1100px', height:'570px'}}>
-            <h1>{event}</h1><br/>
+            <div style={{marginTop:'20px', backgroundImage: `url(${workout6})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'570px'}}>
+            <h1><b>{event}</b></h1><br/>
             <hr/>
 
             <dl className="row">
 
-                <dt className="col-sm-3"><h3>Event ID</h3></dt>
+                <dt className="col-sm-3"><h3><b>Event ID</b></h3></dt>
                 <dd className="col-sm-9"><h3>{eventID}</h3><br/></dd>
             
-                <dt className="col-sm-3"><h3>Description</h3></dt>
+                <dt className="col-sm-3"><h3><b>Description</b></h3></dt>
                 <dd className="col-sm-9"><h3>{description}</h3><br/></dd>
 
-                <dt className="col-sm-3"><h3>Event Category</h3></dt>
+                <dt className="col-sm-3"><h3><b>Event Category</b></h3></dt>
                 <dd className="col-sm-9"><h3>{eventCategory}</h3><br/></dd>
 
-                <dt className="col-sm-3"><h3>Calories</h3></dt>
+                <dt className="col-sm-3"><h3><b>Calories</b></h3></dt>
                 <dd className="col-sm-9"><h3>{calories}</h3><br/></dd>
                 
             </dl>  

@@ -92,13 +92,13 @@ export default class EditTracker extends Component {
           }
         return (
             
-            <div className="container" style={{ backgroundImage: `url(${workout7})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'600px'}}>
-                <h1 className="container">Edit Tracker</h1>
+            <div style={{ backgroundImage: `url(${workout7})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'600px'}}>
+                <h1 className="container"><b>Edit Tracker</b></h1>
                 <form onSubmit = {this.onSubmit}>
 
                     <br/>
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>ClientID</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>ClientID</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="clientID"
@@ -109,7 +109,7 @@ export default class EditTracker extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Event ID</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>Event ID</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="eventID"
@@ -120,7 +120,7 @@ export default class EditTracker extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Sessions Completed</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>Sessions Completed</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="sessionsCompleted"
@@ -131,7 +131,9 @@ export default class EditTracker extends Component {
                     </div>
 
 
-                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <button className="btn btn-success" type="submit" style={{marginTop:'45px'}}>
                         <i className="far fa-check-square"></i>

@@ -68,12 +68,12 @@ export default class CreatePost extends Component {
             return <Redirect to={this.state.redirect} />
           }
         return (
-            <div className="container" style={{ backgroundImage: `url(${workout3})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'1100px', height:'570px'}}>
-                <h1 className="h3 mb-3 font-weight-normal">Create New Event</h1>
+            <div style={{ backgroundImage: `url(${workout3})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'570px'}}>
+                <h1 className="container">Create New Event</h1>
                 <form onSubmit = {this.onSubmit}>
 
                     <div className="container" style={{marginBottom:'2px'}}>
-                        <label style={{marginBottom:'2px'}}><h6>Event</h6></label>
+                        <label style={{marginBottom:'2px'}}><h6><b>Event</b></h6></label>
                         <input type="text"
                         className="form-control"
                         name="event"
@@ -84,7 +84,7 @@ export default class CreatePost extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'2px'}}>
-                        <label style={{marginBottom:'2px'}}><h6>Description</h6></label>
+                        <label style={{marginBottom:'2px'}}><h6><b>Description</b></h6></label>
                         <input type="text"
                         className="form-control"
                         name="description"
@@ -95,7 +95,7 @@ export default class CreatePost extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'1px'}}>
-                        <label style={{marginBottom:'1px'}}><h6>Event Category</h6></label>
+                        <label style={{marginBottom:'1px'}}><h6><b>Event Category</b></h6></label>
                         <input type="text"
                         className="form-control"
                         name="eventCategory"
@@ -106,7 +106,7 @@ export default class CreatePost extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'1px'}}>
-                        <label style={{marginBottom:'1px'}}><h6>Calories</h6></label>
+                        <label style={{marginBottom:'1px'}}><h6><b>Calories</b></h6></label>
                         <input type="text"
                         className="form-control"
                         name="calories"
@@ -116,7 +116,9 @@ export default class CreatePost extends Component {
                         required/>
                     </div>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
                     <button className="btn btn-success" type="submit" style={{marginTop:'40px'}}>
                         <i className="far fa-check-square"></i>

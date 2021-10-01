@@ -91,13 +91,13 @@ export default class EditPost extends Component {
           }
         return (
             
-            <div className="container" style={{ backgroundImage: `url(${workout2})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'570px'}}>
-                <h1 className="container">Edit Event</h1>
+            <div style={{ backgroundImage: `url(${workout2})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'570px'}}>
+                <h1 className="container"><b>Edit Event</b></h1>
                 <form onSubmit = {this.onSubmit}>
                     
                    <br/>
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Event</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>Event</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="event"
@@ -108,7 +108,7 @@ export default class EditPost extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Description</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>Description</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="description"
@@ -119,7 +119,7 @@ export default class EditPost extends Component {
                     </div>
 
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Event Category</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>Event Category</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="eventCategory"
@@ -131,7 +131,7 @@ export default class EditPost extends Component {
 
                     
                     <div className="container" style={{marginBottom:'5px'}}>
-                        <label style={{marginBottom:'5px'}}><h5>Calories</h5></label>
+                        <label style={{marginBottom:'5px'}}><h5><b>Calories</b></h5></label>
                         <input type="text"
                         className="form-control"
                         name="calories"
@@ -141,7 +141,10 @@ export default class EditPost extends Component {
                         required/>
                     </div>
 
-                    &nbsp;&nbsp;
+                   
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <button className="btn btn-success" type="submit" style={{marginTop:'35px'}}>
                         <i className="far fa-check-square"></i>

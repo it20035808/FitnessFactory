@@ -74,7 +74,7 @@ handleSearchArea = (e) =>{
               <br/>
 
             <div className="container">
-              <h4>All Trackers</h4>
+              <h3><b>All Trackers</b></h3>
 
             <div className="input-group">
             <input 
@@ -94,10 +94,10 @@ handleSearchArea = (e) =>{
                   <thead>
                     <tr>
                         
-                        <th scope="col"><h5><center>Client ID</center></h5></th>
-                        <th scope="col"><h5><center>Event ID</center></h5></th>
-                        <th scope="col"><h5><center>Sessions Completed</center></h5></th>
-                        <th scope="col"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</h5></th>
+                        <th scope="col"><h5><center><b>Client ID</b></center></h5></th>
+                        <th scope="col"><h5><center><b>Event ID</b></center></h5></th>
+                        <th scope="col"><h5><center><b>Sessions Completed</b></center></h5></th>
+                        <th scope="col"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Action</b></h5></th>
                     </tr> 
                 </thead>
 

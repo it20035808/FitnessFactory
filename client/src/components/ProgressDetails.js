@@ -32,22 +32,22 @@ export default class ProgressDetails extends Component {
         const {clientID,eventID,sessionsCompleted,calories} = this.state.tracker;
 
         return (
-            <div style={{marginTop:'5px', backgroundImage: `url(${workout4})`,  backgroundPosition:'cover', backgroundSize:'cover' , width:'1250px', height:'600px'}}>
-            <h1>Progress Tracker</h1>
+            <div style={{marginTop:'5px', backgroundImage: `url(${workout4})`,  backgroundPosition:'cover', backgroundSize:'cover' , width:'100%', height:'600px'}}>
+            <h1><b>Progress Tracker</b></h1>
             <hr/>
 
             <dl className="row">
 
-                <dt className="col-sm-3"  ><h3>Client ID</h3></dt>
+                <dt className="col-sm-3"  ><h3><b>Client ID</b></h3></dt>
                 <dd className="col-sm-9" ><h3>{clientID}</h3><br/></dd>
 
-                <dt className="col-sm-3" ><h3>Event ID</h3></dt>
+                <dt className="col-sm-3" ><h3><b>Event ID</b></h3></dt>
                 <dd className="col-sm-9"><h3>{eventID}</h3><br/></dd>
 
-                <dt className="col-sm-3"><h3>Sessions Completed&nbsp;&nbsp;&nbsp;</h3></dt>
+                <dt className="col-sm-3"><h3><b>Sessions Completed</b>&nbsp;&nbsp;&nbsp;</h3></dt>
                 <dd className="col-sm-9"><h3>{sessionsCompleted}</h3><br/></dd>
 
-                <dt className="col-sm-3"><h3>Calories Burnt</h3></dt>
+                <dt className="col-sm-3"><h3><b>Calories Burnt</b></h3></dt>
                 <dd className="col-sm-9"><h3>{sessionsCompleted*calories}</h3><br/></dd>
                 
             </dl>  

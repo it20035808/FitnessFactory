@@ -73,14 +73,14 @@ export default class CreateTracker extends Component {
 
 
         return (
-            <div className="container" style={{ backgroundImage: `url(${workout5})`, backgroundPosition: 'center', backgroundSize: 'cover', width: '1100px', height: '570px' }}>
-                <h1 className="container">Create New Tracker</h1>
+            <div style={{ backgroundImage: `url(${workout5})`, backgroundPosition: 'center', backgroundSize: 'cover', width: '100%', height: '570px' }}>
+                <h1 className="container"><b>Create New Tracker</b></h1>
                 <form onSubmit = {this.onSubmit}>
 
                     <br />
 
                     <div className="container" style={{ marginBottom: '1px' }}>
-                        <label style={{ marginBottom: '5px' }}><h5>ClientID</h5></label>
+                        <label style={{ marginBottom: '5px' }}><h5><b>ClientID</b></h5></label>
                         <input type="text"
                             className="form-control"
                             name="clientID"
@@ -91,7 +91,7 @@ export default class CreateTracker extends Component {
                     </div>
 
                     <div className="container" style={{ marginBottom: '1px' }}>
-                        <label style={{ marginBottom: '5px' }}><h5>Event ID</h5></label>
+                        <label style={{ marginBottom: '5px' }}><h5><b>Event ID</b></h5></label>
                         <input type="text"
                             className="form-control"
                             name="eventID"
@@ -102,7 +102,7 @@ export default class CreateTracker extends Component {
                     </div>
 
                     <div className="container" style={{ marginBottom: '1px' }}>
-                        <label style={{ marginBottom: '5px' }}><h5>Sessions Completed</h5></label>
+                        <label style={{ marginBottom: '5px' }}><h5><b>Sessions Completed</b></h5></label>
                         <input type="text"
                             className="form-control"
                             name="sessionsCompleted"
@@ -114,7 +114,7 @@ export default class CreateTracker extends Component {
                     </div>
 
                     <div className="container" style={{ marginBottom: '1px' }}>
-                        <label style={{ marginBottom: '5px' }}><h5>Calories</h5></label>
+                        <label style={{ marginBottom: '5px' }}><h5><b>Calories</b></h5></label>
                         <input type="text"
                             className="form-control"
                             name="calories"
@@ -124,7 +124,9 @@ export default class CreateTracker extends Component {
                             required />
                     </div>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <button className="btn btn-success" type="submit" style={{ marginTop: '30px' }}>
                         <i className="far fa-check-square"></i>

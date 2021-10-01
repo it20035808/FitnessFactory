@@ -73,7 +73,7 @@ handleSearchArea = (e) =>{
             <div style={{ backgroundImage: `url(${workout1})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'600px'}}>
               <br/>
               <div className="container">
-              <h4>All Events</h4>
+              <h3><b>All Events</b></h3>
 
             <div className="input-group">
             <input 
@@ -95,12 +95,12 @@ handleSearchArea = (e) =>{
                   <thead>
                     <tr>
                         
-                        <th scope="col"><h5><center>Event ID</center></h5></th>
-                        <th scope="col"><h5><center>Event</center></h5></th>
-                        <th scope="col"><h5><center>Description</center></h5></th>
-                        <th scope="col"><h5>Event Category</h5></th>
-                        <th scope="col"><h5><center>Calories</center></h5></th>
-                        <th scope="col"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</h5></th>
+                        <th scope="col"><h5><center><b>Event ID</b></center></h5></th>
+                        <th scope="col"><h5><center><b>Event</b></center></h5></th>
+                        <th scope="col"><h5><center><b>Description</b></center></h5></th>
+                        <th scope="col"><h5><b>Event Category</b></h5></th>
+                        <th scope="col"><h5><center><b>Calories</b></center></h5></th>
+                        <th scope="col"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Action</b></h5></th>
                     </tr> 
                 </thead>
 
