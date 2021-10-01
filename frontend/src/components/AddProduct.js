@@ -97,7 +97,7 @@ function AddProduct() {
     }
 
     return (
-        <div style={{
+        <div className="AddBackground" style={{
             backgroundImage: `url(${background})`,
             maxWidth: "100%"
         }}>
