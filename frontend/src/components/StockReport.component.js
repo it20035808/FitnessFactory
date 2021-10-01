@@ -38,6 +38,9 @@ export default class Stocklist extends Component {
     this.setState({
       search: ['', 'Supplements And Nutritions', 'Bags And Backpacks', 'Recovery And Care', 'Electronics', 'Merchandising'],
     })
+    setTimeout(function () {
+      window.print()
+    }, 1000);
   }
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -40,6 +40,9 @@ export default class Equipmentprint extends Component {
       .catch((error) => {
         console.log(error);
       })
+    setTimeout(function () {
+      window.print()
+    }, 1000);
   }
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
