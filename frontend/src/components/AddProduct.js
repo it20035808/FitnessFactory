@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from 'sweetalert2';
+import { useHistory } from "react-router";
 import background from "../img/gym3.jpg";
 
 
@@ -16,7 +17,7 @@ function AddProduct() {
     const [descriptionErr, setDescriptionErr] = useState({});
     const [priceErr, setPriceErr] = useState({});
 
-
+    const history = useHistory();
     function sendData(e) {
         e.preventDefault();
         const isValid = formValidation();
@@ -36,16 +37,17 @@ function AddProduct() {
                 Swal.fire({
                     title: 'Product Added Successfully',
                     icon: 'success'
-                  })
+                })
                 setName("");
                 setCategory("");
                 setDescription("");
                 setPrice(0);
+                history.push("/");
             }).catch((err) => {
                 Swal.fire({
                     title: err,
                     icon: 'error'
-                  })
+                })
             })
 
 
