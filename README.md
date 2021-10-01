@@ -10,3 +10,4 @@ password: manager
 
 
 # YOYO Curfew iwarai bros 🤣🤣🤣🤣🤣💪💪💪💪💪💪💪💪💪
+# Elama bro 💪💪💪💪💪
