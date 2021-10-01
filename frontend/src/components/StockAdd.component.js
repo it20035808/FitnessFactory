@@ -194,7 +194,7 @@ export default class StockAdd extends Component {
                         </div>
                         <hr />
                         <div style={{ margin: '5px' }}>
-                            <Button variant="contained" type="submit" color="primary" startIcon={<SaveIcon />}>
+                            <Button variant="contained" type="submit" color="primary" starticon={<SaveIcon />}>
                                 Save
                             </Button>
                             <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>

@@ -79,8 +79,6 @@ export default class Equipmentlist extends Component {
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   onClickSearch() {
-    console.log(this.state.catesearch);
-    console.log(this.state.searchKey);
     axios.get('http://localhost:5000/equipment/')
       .then(response => {
         this.filterData(response.data)

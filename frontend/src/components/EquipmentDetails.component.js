@@ -55,7 +55,7 @@ export default class EquipmentDetails extends Component {
     deleteEquipment(id) {
         axios.delete('http://localhost:5000/equipment/' + id)
             .then(response => { console.log(response.data) });
-
+            alert("Deleted")
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,7 +129,7 @@ export default class EquipmentDetails extends Component {
                             </Link></Col>
 
                             <Col><Link style={{ marginRight: '50px', display: "flex", justifyContent: "right", alignItems: "right" }} to="/equipment" onClick={() => { this.deleteEquipment(this.props.match.params.id) }}>
-                                <Button variant="danger" startIcon={<DeleteIcon />}> Delete </Button>
+                                <Button variant="danger" starticon={<DeleteIcon />}> Delete </Button>
                             </Link></Col>
                         </Row>
                     </Container>

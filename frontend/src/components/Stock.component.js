@@ -33,6 +33,7 @@ export default class Stocklist extends Component {
       searchKey: '',
       search: [],
       catesearch: '',
+      empty: []
     };
   }
 
@@ -63,6 +64,9 @@ export default class Stocklist extends Component {
 
 
   StockList() {
+    this.state.stocks.filter(stocks => stocks.quantity === 0).map(currentStock => (
+      alert("Insufficient Stock !!")
+    ))
     return this.state.stocks.map(currentStock => {
       return <Stock stock={currentStock} deleteStock={this.deleteStock} key={currentStock._id} />;
     })
@@ -87,8 +91,6 @@ export default class Stocklist extends Component {
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   onClickSearch() {
-    console.log(this.state.catesearch);
-    console.log(this.state.searchKey);
     axios.get('http://localhost:5000/stock/')
       .then(response => {
         this.filterData(response.data)
@@ -140,6 +142,7 @@ export default class Stocklist extends Component {
   }
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
   render() {
     return (

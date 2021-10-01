@@ -50,6 +50,7 @@ export default class StockDetails extends Component {
     deleteStock(id) {
         axios.delete('http://localhost:5000/stock/' + id)
             .then(response => { console.log(response.data) });
+            alert("Deleted")
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,7 +107,7 @@ export default class StockDetails extends Component {
                             </Link></Col>
 
                             <Col><Link style={{ marginRight: '50px', display: "flex", justifyContent: "right", alignItems: "right" }} to="/stock" onClick={() => { this.deleteStock(this.props.match.params.id) }}>
-                                <Button variant="danger" startIcon={<DeleteIcon />}> Delete </Button>
+                                <Button variant="danger" starticon={<DeleteIcon />}> Delete </Button>
                             </Link></Col>
                         </Row>
                     </Container>
