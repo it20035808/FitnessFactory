@@ -72,7 +72,9 @@ router.route("/get/:id").get(async (req, res) => {
     let productId = req.params.id;
     const product = await Product.findById(productId)
     .then((product) => {
-        res.status(200).send({status: "Product fetched", product: product})
+       // res.status(200).send({status: "Product fetched", product: product}) 
+       //when adding above code with status we can't retrive data to frontend
+       res.json(product)
 
     }).catch((err) => {
         console.log(err)

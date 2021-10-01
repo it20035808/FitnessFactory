@@ -8,24 +8,32 @@ export default function EditProduct(props) {
     const [ProductInfo, setProductInfo] = useState([]);
 
     const [proData, setData] = useState({
-        name:"",
-        category:"",
-        description:"",
-        price:0,
+        name: "",
+        category: "",
+        description: "",
+        price: 0,
     })
 
+
+    // useEffect(() => {
+    //     const pid = props.match.params.id
+    //     axios.get('http://localhost:8070/product/get/' + pid).then((res) => {
+    //         setProductInfo(res.data)
+    //     }).catch((err) => {
+    //         Swal.fire({
+    //             title: err,
+    //             icon: 'error'
+    //         })
+    //     })
+    // }, [])
+    
 
     useEffect(() => {
-        const pid = props.match.params.id
-        axios.get('http://localhost:8070/product/get/' + pid).then((res) => {
-            setProductInfo(res.data)
-        }).catch((err) => {
-            Swal.fire({
-                title: err,
-                icon: 'error'
-              })
+        const Pid = props.match.params.id;
+        axios.get('http://localhost:8070/product/get/' + Pid).then((response) => {
+            setProductInfo(response.data)
         })
-    })
+    }, [])
 
     const history = useHistory();
 
@@ -37,13 +45,13 @@ export default function EditProduct(props) {
             Swal.fire({
                 title: "Updated Successfully",
                 icon: 'success'
-              });
+            });
             history.push("/");
         }).catch((err) => {
             Swal.fire({
                 title: err,
                 icon: 'error'
-              })
+            })
         })
     }
 
