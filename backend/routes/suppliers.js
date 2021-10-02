@@ -93,7 +93,8 @@ router.route("/get/:id").get(async (req, res) => {
     let supplierID = req.params.id;
     const supplier = await Supplier.findById(supplierID)
     .then((supplier) => {
-        res.status(200).send({status: "Supplier fetched", supplier: supplier})
+        //res.status(200).send({status: "Supplier fetched", supplier: supplier})
+        res.json(supplier)
 
     }).catch((err) => {
         console.log(err)

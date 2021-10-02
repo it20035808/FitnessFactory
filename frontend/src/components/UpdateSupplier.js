@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
-import background from "../gymb12.jpg";
 
 
 
@@ -11,30 +10,30 @@ export default function EditSupplier(props) {
     const [SupplierList, setSupplier] = useState([]);
 
     const [proData, setData] = useState({
-        supplierId:"",
-        supplierName:"",
-        address:"",
-        phoneNumber:"",
-        email:"",
-        orderId:"",
-        productDescription:"",
-        unitCost:"",
-        quantity:"",
-        totalAmount:""
+        supplierId: "",
+        supplierName: "",
+        address: "",
+        phoneNumber: "",
+        email: "",
+        orderId: "",
+        productDescription: "",
+        unitCost: "",
+        quantity: "",
+        totalAmount: ""
     })
 
 
     useEffect(() => {
         const pid = props.match.params.id
         axios.get('http://localhost:8070/supplier/get/' + pid).then((res) => {
-            setSupplier(res.data)
+            setData(res.data)
         }).catch((err) => {
             Swal.fire({
                 title: err,
                 icon: 'error'
             })
         })
-    })
+    }, [])
 
     const history = useHistory();
     function updateProduct(e) {
@@ -65,11 +64,11 @@ export default function EditSupplier(props) {
         <div style={{
             maxWidth: "100%"
         }}
-        className={"UpdateSVGBackground"}
+            className={"UpdateSVGBackground"}
         >
             <div className="pt-24 container">
 
-            <h2 class="display-3 font-black mb-3"> Update Supplier </h2>
+                <h2 class="display-3 font-black mb-3"> Update Supplier </h2>
 
 
                 <span className="border">
@@ -78,15 +77,17 @@ export default function EditSupplier(props) {
                             <div className="form-group">
                                 <label for=" supplierId">Supplier Id</label>
                                 <input type="text" className="form-control" id=" supplierId" placeholder="Enter Supplier Id"
+                                    value={proData.supplierId} 
                                     onChange={(e) => {
                                         handle(e);
-                                    }} />
+                                    }}/>
 
                             </div>
                             <div className="form-group">
 
                                 <label for="suppliertName">Supplier Name</label>
                                 <input type="text" className="form-control" id="supplierName" placeholder="Enter Supplier Name"
+                                    value={proData.supplierName}
                                     onChange={(e) => {
                                         handle(e);
                                     }} />
@@ -96,6 +97,7 @@ export default function EditSupplier(props) {
 
                                 <label for="address">Supplier Address</label>
                                 <input type="text" className="form-control" id="address" placeholder="Enter Supplier Address"
+                                    value={proData.address}
                                     onChange={(e) => {
                                         handle(e);
                                     }} />
@@ -106,6 +108,7 @@ export default function EditSupplier(props) {
 
                                 <label for="phoneNumber">Supplier Phone Number</label>
                                 <input type="text" className="form-control" id="phoneNumber" placeholder="Enter Supplier Phone Number"
+                                    value={proData.phoneNumber}
                                     onChange={(e) => {
                                         handle(e);
                                     }} />
@@ -117,6 +120,7 @@ export default function EditSupplier(props) {
 
                                 <label for="email">Supplier Email</label>
                                 <input type="text" className="form-control" id="email" placeholder="Enter Supplier Email"
+                                    value={proData.email}
                                     onChange={(e) => {
                                         handle(e);
                                     }} />
@@ -127,7 +131,8 @@ export default function EditSupplier(props) {
 
                                 <label for="orderId">Order Id</label>
                                 <input type="text" className="form-control" id="orderId" placeholder="Enter Order Id"
-                                    onChange={(e) => {
+                                   value={proData.orderId}
+                                   onChange={(e) => {
                                         handle(e);
                                     }} />
 
@@ -137,6 +142,7 @@ export default function EditSupplier(props) {
 
                                 <label for="productDescription">Product Description</label>
                                 <input type="text" className="form-control" id="productDescription" placeholder="Enter Product Description"
+                                    value={proData.productDescription}
                                     onChange={(e) => {
                                         handle(e);
                                     }} />
@@ -148,7 +154,8 @@ export default function EditSupplier(props) {
 
                                 <label for="unitCost">Unit Cost</label>
                                 <input type="text" className="form-control" id="unitCost" placeholder="Enter Unit Cost"
-                                    onChange={(e) => {
+                                   value={proData.unitCost}
+                                   onChange={(e) => {
                                         handle(e);
                                     }} />
 
@@ -159,6 +166,7 @@ export default function EditSupplier(props) {
 
                                 <label for="quantity">Quantity</label>
                                 <input type="text" className="form-control" id="quantity" placeholder="Enter Quantity "
+                                    value={proData.quantity}
                                     onChange={(e) => {
                                         handle(e);
                                     }} />
@@ -169,7 +177,8 @@ export default function EditSupplier(props) {
 
                                 <label for="totalAmount">Total Amount</label>
                                 <input type="text" className="form-control" id="totalAmount" placeholder="Enter Total Amount"
-                                    onChange={(e) => {
+                                   value={proData.totalAmount}
+                                   onChange={(e) => {
                                         handle(e);
                                     }} />
 
