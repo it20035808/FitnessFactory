@@ -34,18 +34,18 @@ export default class ProgreportDetails extends Component {
                     <div class="d-flex justify-content-center align-items-center h-100">
 
             
-                        <div style={{marginTop:'20px'}}>
+                        <div style={{marginTop:'20px', marginRight:'-300px'}}>
                             <h2 style={{color:'#6A71E1'}}> Instructor ID = {instructorID} &nbsp; Progress Report Details </h2> 
-                            <hr/><br/>
+                            <hr/><br/> <br/>
 
                             <dl className="row">  
-                                <dt className="col-sm-9"> <h3> Hours In Month &nbsp; </h3> </dt>
+                                <dt className="col-sm-6"> <h3> Hours In Month  </h3> </dt>
                                 <dd className="col-sm-3"> <h3> = &nbsp; {HoursInMonth} </h3> </dd>
 
-                                <dt className="col-sm-9"> <h3> Hours Worked In Month &nbsp;  </h3> </dt>
+                                <dt className="col-sm-6"> <h3> Hours Worked In Month &nbsp;  </h3> </dt>
                                 <dd className="col-sm-3"> <h3> = &nbsp; {HoursWorkedInMonth} </h3> </dd>
                                 
-                                <dt className="col-sm-9"> <h3> Hours  remaining worked In Month &nbsp;  </h3> </dt>
+                                <dt className="col-sm-6"> <h3> Hours Remaining To Work In Month &nbsp;  </h3> </dt>
                                 <dd className="col-sm-3"> <h3> = &nbsp; {HoursInMonth - HoursWorkedInMonth} </h3> </dd>
                             </dl>
                         </div>
