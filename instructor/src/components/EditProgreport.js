@@ -82,25 +82,25 @@ onSubmit = (e) =>{
     
                             <form className="needs-validation" noValidate>
                                 <div className="row mb-3">
-                                    <label for="instructorid" className="col-sm-2 col-form-label"> <h6> Instructor ID </h6> </label>
-                                    <div className="col-sm-10">
+                                    <label for="instructorid" className="col-sm-3 col-form-label"> <h6> Instructor ID </h6> </label>
+                                    <div className="col-sm-8">
                                         <input type="instructorID" name="instructorID" className="form-control" id="instructorid" placeholder="Enter instructor ID"
                                             value={this.state.instructorID}  onChange={this.handleInputChange}/>
                                     </div>
                                 </div> <br/>
                 
                                 <div className="row mb-3">
-                                    <label for="HoursInMonth" className="col-sm-2 col-form-label"> <h6> Hours In Month </h6> </label>
-                                    <div className="col-sm-10">
-                                        <input type="HoursInMonth" name="HoursInMonth" className="form-control" id="HoursInMonth" placeholder="Enter instructor ID"
+                                    <label for="HoursInMonth" className="col-sm-3 col-form-label"> <h6> Hours In Month </h6> </label>
+                                    <div className="col-sm-8">
+                                        <input type="HoursInMonth" name="HoursInMonth" className="form-control" id="HoursInMonth" placeholder="Enter hours in month"
                                             value={this.state.HoursInMonth}  onChange={this.handleInputChange}/>
                                     </div>
                                 </div> <br/><br/>
     
                                 <div className="row mb-3">
-                                    <label for="HoursWorkedInMonth" className="col-sm-2 col-form-label"><h6> Hours Worked In Month </h6> </label>
-                                    <div className="col-sm-10">
-                                        <input type="HoursWorkedInMonth" name="HoursWorkedInMonth" className="form-control" id="HoursWorkedInMonth" placeholder="Enter instructor ID"
+                                    <label for="HoursWorkedInMonth" className="col-sm-3 col-form-label"><h6> Hours Worked In Month </h6> </label>
+                                    <div className="col-sm-8">  
+                                        <input type="HoursWorkedInMonth" name="HoursWorkedInMonth" className="form-control" id="HoursWorkedInMonth" placeholder="Enter hours worked on month"
                                             value={this.state.HoursWorkedInMonth}  onChange={this.handleInputChange}/>
                                     </div>
                                 </div> <br/> 

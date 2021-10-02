@@ -34,7 +34,7 @@ export default class ProgreportDetails extends Component {
                     <div class="d-flex justify-content-center align-items-center h-100">
 
                         <div style={{marginTop:'20px', marginRight:'-300px'}}>
-                            <h2 style={{color:'#6A71E1'}}> Instructor ID = {instructorID} &nbsp; Progress Report Details </h2> 
+                            <h2 style={{color:'#6A71E1'}}> Instructor ID = {instructorID} &nbsp; Progress Report Details In This Month</h2> 
                             <hr/><br/> <br/>
 
                             <dl className="row">  
