@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
-import background from "../img/gym5.jpg";
-
+import "../styles/AllProducts.css";
 
 
 export default function ReadProduct() {
@@ -23,7 +22,7 @@ export default function ReadProduct() {
             Swal.fire({
                 title: 'Deleted Successfully',
                 icon: 'success'
-              });
+            });
             setProduct(ProductList.filter((val) => {
                 return val._id != id;
             }))
@@ -38,28 +37,30 @@ export default function ReadProduct() {
         history.push(path);
     }
 
+    const gotoAdd = ()=>{
+        let path = "/add";
+        history.push(path);
+    }
+
     return (
 
-        <div style={{
-            backgroundImage: `url(${background})`,
-            backgroundRepeat: 'no-repeat',
-        }}>
-            <div class="container" >
+        <div className="productBody" >
+            <div className="productContainer" >
 
-                <h2 class="display-3" > List of products  </h2>
+                <h2> List of products  </h2>
 
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Enter Product name" aria-label="Search"
+                <div className="input-group rounded">
+                    <input type="search" className="form-control rounded" placeholder="Enter Product name" aria-label="Search"
                         aria-describedby="search-addon"
                         onChange={(e) => {
                             setSearchItem(e.target.value);
                         }} />
-                    <span class="input-group-text border-0" id="search-addon">
-                        <button type="button" class="btn btn-primary">Search</button>
-                        <i class="fas fa-search"></i>
+                    <span className="input-group-text border-0" id="search-addon">
+                        <button type="button" className="btn btn-primary">Search</button>
+                        <i className="fas fa-search"></i>
                     </span>
                 </div> <br />
-                {ProductList.filter((val)=> {
+                {ProductList.filter((val) => {
                     if (searchItem == "") {
                         return val
                     } else if (val.name.toLowerCase().includes(searchItem.toLowerCase()) || val.category.toLowerCase().includes(searchItem.toLowerCase())) {
@@ -68,8 +69,8 @@ export default function ReadProduct() {
                 }).map((val, key) => {
 
                     return <div>
-                        <table class="table table-dark">
-                            <thead class="thead-dark">
+                        <table className="table table-dark">
+                            <thead className="thead-dark">
                                 <tr>
                                     <th scope="col">Product Name</th>
                                     <th scope="col">Category</th>
@@ -81,9 +82,9 @@ export default function ReadProduct() {
                             <tbody>
 
                                 <tr>
-                                    <td>{val.name} <br /> <br /> <a type="button" class="btn btn-danger" onClick={() => deleteProduct(val._id)} > Delete Product </a> <br /> <br />
+                                    <td>{val.name} <br /> <br /> <a type="button" className="btn btn-danger" onClick={() => deleteProduct(val._id)} > Delete Product </a> <br /> <br />
 
-                                        <a type="button" class="btn btn-info" onClick={() => routeChange(val._id)} > Edit Product </a>
+                                        <a type="button" className="btn btn-info" onClick={() => routeChange(val._id)} > Edit Product </a>
 
                                     </td>
 
@@ -99,6 +100,9 @@ export default function ReadProduct() {
                         </table>
                     </div>
                 })}
+                <div class="flex-add-contain">
+                    <button class="btn btn-primary" type="button" onClick={() => gotoAdd()}>Add a new product</button>
+                </div>
             </div>
         </div>)
 }

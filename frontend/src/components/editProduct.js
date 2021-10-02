@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
-import background from "../img/gym3.jpg";
+import "../styles/EditProducts.css";
 
 
 export default function EditProduct(props) {
@@ -14,19 +14,6 @@ export default function EditProduct(props) {
         description: "",
         price: 0,
     })
-
-
-    // useEffect(() => {
-    //     const pid = props.match.params.id
-    //     axios.get('http://localhost:8070/product/get/' + pid).then((res) => {
-    //         setProductInfo(res.data)
-    //     }).catch((err) => {
-    //         Swal.fire({
-    //             title: err,
-    //             icon: 'error'
-    //         })
-    //     })
-    // }, [])
 
 
     useEffect(() => {
@@ -62,13 +49,14 @@ export default function EditProduct(props) {
         setData(newdata)
     }
 
-
+    const gotoView = () => {
+        let path = "/";
+        history.push(path);
+    }
+    
     return (
-        <div className="AddBackground" style={{
-            backgroundImage: `url(${background})`,
-            maxWidth: "100%"
-        }}>
-            <div className="container">
+        <div className="editBody">
+            <div className="editContainer">
                 <span className="border">
                     <div className="shadow p-3 mb-5 bg-white rounded">
                         <form onSubmit={updateProduct}>
@@ -112,7 +100,12 @@ export default function EditProduct(props) {
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" required="true" />
                                 <label className="form-check-label" for="exampleCheck1">I've Checked everything is correct</label>
                             </div>
-                            <button type="submit" className="btn btn-primary">Update</button>
+                            <div className="flex-button">
+                                <button type="submit" className="btn btn-outline-primary">Update</button>
+                            </div>
+                            <div className="flex-button">
+                                <button type="button" className="btn btn-outline-dark" onClick={() => gotoView()}>View All Products</button>
+                            </div>
                         </form>
                     </div>
                 </span>

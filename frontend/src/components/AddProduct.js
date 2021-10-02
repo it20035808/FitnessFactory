@@ -107,64 +107,64 @@ function AddProduct() {
                 <span className="border">
                     <div className="shadow p-3 mb-5 bg-white rounded">
                         <form onSubmit={sendData}>
-                        <div class ="form-group">
-                        <label for="name">Product Name</label>
-                        <input type ="text" className="form-control" id="name" placeholder="Enter product name"
-                        onChange={(e) => {
-                        setName(e.target.value);
-                    }} />
-                    {Object.keys(nameErr).map((key) => {
-                        return <div style={{ color: "red" }}>{nameErr[key]}</div>
-                    })}
-                        </div>
+                            <div class="form-group">
+                                <label for="name">Product Name</label>
+                                <input type="text" className="form-control" id="name" placeholder="Enter product name"
+                                    onChange={(e) => {
+                                        setName(e.target.value);
+                                    }} />
+                                {Object.keys(nameErr).map((key) => {
+                                    return <div style={{ color: "red" }}>{nameErr[key]}</div>
+                                })}
+                            </div>
 
-                        <div className="form-group">
-                        <label for="category">Product Category</label>
-                        <input type ="text" className="form-control" id="category" placeholder="Enter product category"
-                        onChange={(e) => {
-                        setCategory(e.target.value);
-                    }} />
-                    {Object.keys(categoryErr).map((key) => {
-                        return <div style={{ color: "red" }}>{categoryErr[key]}</div>
-                    })}
-                        </div>
+                            <div className="form-group">
+                                <label for="category">Product Category</label>
+                                <input type="text" className="form-control" id="category" placeholder="Enter product category"
+                                    onChange={(e) => {
+                                        setCategory(e.target.value);
+                                    }} />
+                                {Object.keys(categoryErr).map((key) => {
+                                    return <div style={{ color: "red" }}>{categoryErr[key]}</div>
+                                })}
+                            </div>
 
-                        <div className="form-group">
-                        <label for="description">Product Description</label>
-                        <textarea className="form-control" id="description" rows="3" placeholder="Enter description"
-                        onChange={(e) => {
-                        setDescription(e.target.value);
-                    }}></textarea>
-                    {Object.keys(descriptionErr).map((key) => {
-                        return <div style={{ color: "red" }}>{descriptionErr[key]}</div>
-                    })}
-                        </div>
+                            <div className="form-group">
+                                <label for="description">Product Description</label>
+                                <textarea className="form-control" id="description" rows="3" placeholder="Enter description"
+                                    onChange={(e) => {
+                                        setDescription(e.target.value);
+                                    }}></textarea>
+                                {Object.keys(descriptionErr).map((key) => {
+                                    return <div style={{ color: "red" }}>{descriptionErr[key]}</div>
+                                })}
+                            </div>
 
-                        <div className="form-group">
-                        <label for="price">Product Price</label>
-                        <input type ="number" className="form-control" id="price" placeholder="Enter product price"
-                        onChange={(e) => {
-                        setPrice(e.target.value);
-                    }} />
-                    {Object.keys(priceErr).map((key) => {
-                        return <div style={{ color: "red" }}>{priceErr[key]}</div>
-                    })}
-                        </div>
+                            <div className="form-group">
+                                <label for="price">Product Price</label>
+                                <input type="number" className="form-control" id="price" placeholder="Enter product price"
+                                    onChange={(e) => {
+                                        setPrice(e.target.value);
+                                    }} />
+                                {Object.keys(priceErr).map((key) => {
+                                    return <div style={{ color: "red" }}>{priceErr[key]}</div>
+                                })}
+                            </div>
 
-                        <div className="form-group form-check">
-                        <input type ="checkbox" className="form-check-input" id="exampleCheck1" required="true" />
-                        <label className="form-check-label" for="exampleCheck1">I've Checked everything is correct</label>
-                        </div>
-                        <div className="flex-button">
-                    {/*original bootstrap class name for button = btn btn-primary */}
-                        <button type ="submit" className="btn btn-outline-primary">Add Product</button>
-                        </div>
-                        <div className="flex-button2">
-                        <button type ="button" className="btn btn-outline-dark" onClick={() => gotoView()}>View All Products</button>
+                            <div className="form-group form-check">
+                                <input type="checkbox" className="form-check-input" id="exampleCheck1" required="true" />
+                                <label className="form-check-label" for="exampleCheck1">I've Checked everything is correct</label>
+                            </div>
+                            <div className="flex-button">
+                                {/*original bootstrap class name for button = btn btn-primary */}
+                                <button type="submit" className="btn btn-outline-primary">Add Product</button>
+                            </div>
+                            <div className="flex-button2">
+                                <button type="button" className="btn btn-outline-dark" onClick={() => gotoView()}>View All Products</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </span>
+                </span>
 
             </div >
         </div >
