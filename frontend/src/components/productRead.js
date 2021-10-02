@@ -47,7 +47,7 @@ export default function ReadProduct() {
         <div className="productBody" >
             <div className="productContainer" >
 
-                <h2> List of products  </h2>
+                <h2> List of Products  </h2>
 
                 <div className="input-group rounded">
                     <input type="search" className="form-control rounded" placeholder="Enter Product name" aria-label="Search"
@@ -101,7 +101,8 @@ export default function ReadProduct() {
                     </div>
                 })}
                 <div class="flex-add-contain">
-                    <button class="btn btn-primary" type="button" onClick={() => gotoAdd()}>Add a new product</button>
+                    <button class="btn btn-primary" type="button" onClick={() => gotoAdd()}
+                    style={{width:"30em"}}>Add a new product</button>
                 </div>
             </div>
         </div>)
