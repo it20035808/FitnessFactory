@@ -63,10 +63,15 @@ export default function EditSupplier(props) {
 
     return (
         <div style={{
-            backgroundImage: `url(${background})`,
             maxWidth: "100%"
-        }}>
-            <div className="container">
+        }}
+        className={"UpdateSVGBackground"}
+        >
+            <div className="pt-24 container">
+
+            <h2 class="display-3 font-black mb-3"> Update Supplier </h2>
+
+
                 <span className="border">
                     <div className="shadow p-3 mb-5 bg-white rounded">
                         <form onSubmit={updateProduct}>
