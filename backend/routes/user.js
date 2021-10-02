@@ -85,7 +85,7 @@ router.put('/updateUserLevel/:id', (req, res) => {
     User.findByIdAndUpdate(req.params.id, { accLevel: accl}, (err, docs) => {
         if (err){
             console.log(err);
-            res.json("Update unsccessful")
+            res.json("Update unsuccessful")
         }
         else{
             res.json(docs)

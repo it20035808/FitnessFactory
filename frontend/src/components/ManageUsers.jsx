@@ -1,89 +1,178 @@
 //Create home component
-import React, { useEffect, useState } from "react";
+import React, { Component} from "react";
 import axios from "axios";
 
 //import components
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
+//import Container from 'react-bootstrap/Container';
+import '../styles/ManageUsers.css';
 
-const ManageUsers = () => {
-  //states
-  const [users, setUsers] = useState([]);
+export default class ManageUsers extends Component{
+  constructor(props){
+    super(props);
 
-  //retrieve users
-  function retrieveUsers() {
-    axios.get("http://localhost:8070/user/getUser").then((res) => {
-      if (res.data.success) {
-        setUsers(res.data.existingUsers);
+    this.state={
+      posts:[],
+
+      userUpdate: {
+        newAccLevel: 0
       }
-      console.log(users);
+    };
+
+    this.handleUserUpdate = this.handleUserUpdate.bind(this);
+  }
+
+  componentDidMount(){
+    this.retrievePosts();
+  }
+
+  retrievePosts(){
+    axios.get("http://localhost:8070/user/getUser").then(res => {
+      if (res.data.success){
+        this.setState({
+          posts:res.data.existingUsers
+        })
+      }
+
+      console.log(this.state.posts)
+    })
+  }
+
+
+  onDelete = (_id) => {
+    axios.delete(`http://localhost:8070/user/deleteUser/${_id}`).then((res)=>{
+      this.retrievePosts();
+    }).catch((err)=>{
+      console.log(err)
+      this.retrievePosts();
+    })
+  }
+
+  handleUserUpdate = (e, id) => {
+
+    this.setState({ userUpdate:{newAccLevel: e.target.value}}, ()=>{
+      console.log("value: ", e.target.value);
+      console.log("state: ", this.state.userUpdate.newAccLevel);
+      console.log("id: ", id);
+
+      axios.put(`http://localhost:8070/user/updateUserLevel/${id}`, {accLevel: this.state.userUpdate.newAccLevel}).then((res)=>{
+        alert("user updated!");
+        window.location.reload();
+      }).catch((err)=>{
+        console.log(err)
+        })
+      });
+
+      //this.retrievePosts();
+  }  
+
+  filterData(posts, searchKey){
+    const result = posts.filter((posts)=>
+      posts.username.toLowerCase().includes(searchKey) ||
+      posts.username.includes(searchKey) ||
+      posts.accType.toLowerCase().includes(searchKey)
+    )
+
+    this.setState({posts: result})
+  }
+
+  handleSearch = (e) => {
+    const searchKey = e.currentTarget.value;
+    console.log( e.currentTarget.value)
+
+    axios.get("http://localhost:8070/user/getUser").then(res => {
+      if (res.data.success){
+        this.filterData(res.data.existingUsers, searchKey)
+      }
     });
   }
 
-  useEffect(() => {
-    retrieveUsers()
-  },[])
-
-  function deleteUser(id){
-      axios.delete(`http://localhost:8070/user/deleteUser/` + id).then((res) => {
-          alert("user deleted");
-          this.retrieveUsers();
-      }).catch((err)=>{
-          console.log(err);
-      })
+  goToAddUser = () => {
+    window.location.href = "/createAccountPage";
   }
-  
 
-  return (
-    <div>
-      <NavBar />
-      <h4>User Accounts Management</h4>
-      <Container>
-      <table className="table">
-        <thread>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Username</th>
-            <th scope="col">Type</th>
-            <th scope="col">Level</th>
-            <th scope="col">Remove User</th>
-          </tr>
+
+
+  render(){
+    return(
+      <div className='secondBody'>
+        <NavBar />
         
+        <div className='userManblock'>
+            <h4>User Accounts Management</h4>
+
+
+            <hr></hr>
+
+            <div className='row'>
+              <div className='col'>
+                <div className='searchBar'>
+                  <input
+                    className='form-control'
+                    type='search'
+                    placeholder='search user'
+                    onChange={this.handleSearch}
+                  >
+
+                    </input>
+                </div>
+              </div>
+
+              <div className='col'>
+                <button variant="primary" type="submit" className='btn1' onClick={this.goToAddUser}>
+                  Add User 
+                </button>
+              </div>
+            </div>
+
+            <hr></hr>
+
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Level</th>
+                  <th scope="col">Remove User</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.posts.map((posts,index) =>(
+                  <tr>
+                  <th scope="row">{index + 1}</th>
+                  <td>{posts.username}</td>
+                  <td>{posts.accType}&nbsp;&nbsp;</td>
+                  <td>
+                      <Form.Select className="accLevelForm"
+                          name="accLevel"
+                          aria-label="Default select example"
+                          onChange={(e)=>this.handleUserUpdate(e, posts._id)}
+                      >
+                          <option value="null">{posts.accLevel}</option>
+                          <option value="1">Level 1 (user)</option>
+                          <option value="2">Level 2 (admin)</option>
+                      </Form.Select>
+                  </td>
+      
+                  <td>
+                    <button className="btn btn-danger" onClick={()=>this.onDelete(posts._id)}>
+                      Delete User
+                    </button>
+                  </td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+
+        </div>
         
-          <tbody>
-            {users.map((users, index) => (
-              <tr>
-                <th scope="row">{index + 1}</th>
-                <td>{users.username}</td>
-                <td>{users.accType}&nbsp;&nbsp;</td>
-                <td>
-                    <Form.Select
-                        name="accLevel"
-                        aria-label="Default select example"
-                    >
-                        <option>{users.accLevel}</option>
-                        <option value="1">Level 1 (user)</option>
-                        <option value="2">Level 2 (admin)</option>
-                    </Form.Select>
-                </td>
-    
-                <td>
-                  <button className="btn btn-danger" onClick={deleteUser(users._id)}>
-                    Delete User
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-          </thread>
-      </table>
-      </Container>
+        <Footer />
+      </div>
+    )
+  }
 
-      <Footer />
-    </div>
-  );
-};
+}
 
-export default ManageUsers;
