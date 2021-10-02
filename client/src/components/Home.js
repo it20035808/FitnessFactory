@@ -73,7 +73,7 @@ handleSearchArea = (e) =>{
             <div style={{ backgroundImage: `url(${workout1})`,  backgroundPosition:'center', backgroundSize:'cover' , width:'100%', height:'600px'}}>
               <br/>
               <div className="container">
-              <h3><b>All Events</b></h3>
+              <h3><b>All Events - {this.state.posts.length}</b></h3>
 
             <div className="input-group">
             <input 

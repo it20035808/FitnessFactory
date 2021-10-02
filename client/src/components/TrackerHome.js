@@ -74,7 +74,7 @@ handleSearchArea = (e) =>{
               <br/>
 
             <div className="container">
-              <h3><b>All Trackers</b></h3>
+              <h3><b>All Trackers - {this.state.trackers.length}</b></h3>
 
             <div className="input-group">
             <input 
