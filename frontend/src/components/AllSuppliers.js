@@ -34,10 +34,15 @@ export default function ReadSupplier() {
         history.push(path);
     }
 
+    const gotoAdd = ()=>{
+        let path = "/add";
+        history.push(path);
+    }
+
     return (<div style={{
         maxWidth: "100%",
     }}
-                 className={"h-screen DisplaySVGBackground"}
+                 className={"h-full DisplaySVGBackground"}
     >
         <div class="pt-24 container">
 
@@ -113,6 +118,10 @@ export default function ReadSupplier() {
                     </table>
                 </div>
             })}
+            <div class="grid place-items-center">
+                    <button class="btn btn-primary bg-blue-400" type="button" onClick={() => gotoAdd()}
+                    style={{width:"30em"}}>Add a new supplier</button>
+                </div>
         </div>
     </div>)
 }

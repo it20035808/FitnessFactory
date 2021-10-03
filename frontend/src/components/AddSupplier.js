@@ -3,6 +3,7 @@ import background from "../gymb12.jpg";
 import axios from "axios";
 import './ComponentStyles.css'
 import Swal from "sweetalert2";
+import { useHistory } from "react-router";
 import ErrorModal from "./ErrorModal";
 
 export default function AddSupplier() {
@@ -20,6 +21,7 @@ export default function AddSupplier() {
     const [visibility, setVisibility] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
 
+    const history = useHistory();
 
     const changeModalVisibilityHandler = (state) => {
         setVisibility(state);
@@ -141,6 +143,10 @@ export default function AddSupplier() {
 
     }
 
+    const gotoAdd = ()=>{
+        let path = "/";
+        history.push(path);
+    }
     return (
         <div style={{
             maxWidth: "100%",
@@ -289,6 +295,11 @@ export default function AddSupplier() {
 
 
           <button type="submit" className="btn btn-primary min-w-full mt-5 p-2">Submit</button>
+
+          <div class="grid place-items-center pt-5">
+                                <button class="btn btn-primary" type="button" onClick={() => gotoAdd()}
+                                    style={{ width: "30em" }}>Supplier List</button>
+                            </div>
         </form>
                 </div>
            </span>

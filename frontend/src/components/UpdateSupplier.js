@@ -60,6 +60,10 @@ export default function EditSupplier(props) {
         setData(newdata)
     }
 
+    const gotoAdd = ()=>{
+        let path = "/";
+        history.push(path);
+    }
     return (
         <div style={{
             maxWidth: "100%"
@@ -77,10 +81,10 @@ export default function EditSupplier(props) {
                             <div className="form-group">
                                 <label for=" supplierId">Supplier Id</label>
                                 <input type="text" className="form-control" id=" supplierId" placeholder="Enter Supplier Id"
-                                    value={proData.supplierId} 
+                                    value={proData.supplierId}
                                     onChange={(e) => {
                                         handle(e);
-                                    }}/>
+                                    }} />
 
                             </div>
                             <div className="form-group">
@@ -131,8 +135,8 @@ export default function EditSupplier(props) {
 
                                 <label for="orderId">Order Id</label>
                                 <input type="text" className="form-control" id="orderId" placeholder="Enter Order Id"
-                                   value={proData.orderId}
-                                   onChange={(e) => {
+                                    value={proData.orderId}
+                                    onChange={(e) => {
                                         handle(e);
                                     }} />
 
@@ -154,8 +158,8 @@ export default function EditSupplier(props) {
 
                                 <label for="unitCost">Unit Cost</label>
                                 <input type="text" className="form-control" id="unitCost" placeholder="Enter Unit Cost"
-                                   value={proData.unitCost}
-                                   onChange={(e) => {
+                                    value={proData.unitCost}
+                                    onChange={(e) => {
                                         handle(e);
                                     }} />
 
@@ -177,8 +181,8 @@ export default function EditSupplier(props) {
 
                                 <label for="totalAmount">Total Amount</label>
                                 <input type="text" className="form-control" id="totalAmount" placeholder="Enter Total Amount"
-                                   value={proData.totalAmount}
-                                   onChange={(e) => {
+                                    value={proData.totalAmount}
+                                    onChange={(e) => {
                                         handle(e);
                                     }} />
 
@@ -186,7 +190,13 @@ export default function EditSupplier(props) {
                             </div>
 
 
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary min-w-full">Submit</button>
+
+                            <div class="grid place-items-center pt-5">
+                                <button class="btn btn-primary bg-blue-400" type="button" onClick={() => gotoAdd()}
+                                    style={{ width: "30em" }}>Supplier List</button>
+                            </div>
+
                         </form>
                     </div>
                 </span>
