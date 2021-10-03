@@ -26,8 +26,34 @@ app.use(passport.session());//initialise passport session
 require('./passportConfig')(passport);//require passport config file and pass instance of passport
 //-------------------------START OF ROUTES------------------------------------
 const userRouter = require("./routes/user");
+const eventsRouter = require("./routes/posts");
+const trackerRouter = require("./routes/trackers");
+const productRouter = require("./routes/products");
+const progRouter = require("./routes/progreports");
+const scheduleRouter = require("./routes/schedules");
+const expenseRouter = require("./routes/expenses");
+const paymentRouter = require("./routes/payments");
+const supplierRouter = require("./routes/suppliers");
+const equipmentRouter = require('./routes/equipment');
+const stockRouter = require('./routes/stock');
 
 app.use("/user", userRouter);
+//hasal
+app.use("/events", eventsRouter);
+app.use("/tracker", trackerRouter);
+//ramith
+app.use("/products", productRouter);
+//hashani
+app.use("/progreport", progRouter);
+app.use("/schedules", scheduleRouter);
+//ashan
+app.use('/expenses', expenseRouter);
+app.use('/payment', paymentRouter);
+//jayathmi
+app.use('/sup', supplierRouter);
+//chirath
+app.use('/equipment', equipmentRouter);
+app.use('/stock', stockRouter);
 
 const URL = process.env.MONGODB_URL;
 

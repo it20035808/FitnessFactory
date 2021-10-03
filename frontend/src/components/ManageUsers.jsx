@@ -1,6 +1,7 @@
 //Create home component
 import React, { Component} from "react";
 import axios from "axios";
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 //import components
 import NavBar from "./NavBar";
@@ -129,7 +130,7 @@ export default class ManageUsers extends Component{
 
             <hr></hr>
 
-            <table className="table">
+            <table id="Users" className="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -166,6 +167,22 @@ export default class ManageUsers extends Component{
                 ))}
               </tbody>
             </table>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <ReactHTMLTableToExcel
+
+                            id="test-table-xls-button"
+
+                            className="btn btn-primary"
+
+                            table="Users"
+
+                            filename="tablexls"
+
+                            sheet="tablexls"
+
+                            buttonText="Download as Excel file"/>
 
         </div>
         

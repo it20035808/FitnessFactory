@@ -31,15 +31,37 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Events</Nav.Link>
-              <Nav.Link href="#link">Store</Nav.Link>
+              <Nav.Link href="/homePage">Home</Nav.Link>
 
-              <NavDropdown title="Admin" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/manageUsers">User Accounts</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.1">Suppliers</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.1">Inventory</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.1">Financial</NavDropdown.Item>
+              <NavDropdown title="Events" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/events">Events</NavDropdown.Item>
+                <NavDropdown.Item href="/trackerHome">Trackers</NavDropdown.Item>
+                <NavDropdown.Item href="/summary">Summary</NavDropdown.Item>
+              </NavDropdown>
+
+
+              <NavDropdown title="Store" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/store">Store</NavDropdown.Item>
+                <NavDropdown.Item href="/addProduct">Add Product</NavDropdown.Item>
+              </NavDropdown>
+
+              <NavDropdown title="Instructors" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/schedules">Schedules</NavDropdown.Item>
+                <NavDropdown.Item href="/progReports">Progress Reports</NavDropdown.Item>
+              </NavDropdown>
+              
+              <Nav.Link href="/manageUsers">Users</Nav.Link>
+
+              <NavDropdown title="Suppliers" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/suppliers">Suppliers</NavDropdown.Item>
+                <NavDropdown.Item href="/addSupplier">Add Suppliers</NavDropdown.Item>
+              </NavDropdown>
+
+              <Nav.Link href="/inventory">Inventory</Nav.Link>
+
+              <NavDropdown title="Financial" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/expenses">Expenses</NavDropdown.Item>
+                <NavDropdown.Item href="/payments">Payments</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link href="/logout" onClick={userLogOut}>Log out</Nav.Link>

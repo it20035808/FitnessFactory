@@ -1,0 +1,32 @@
+.productBody {
+    background-image: url("../images/gym2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.productContainer {
+    display: block;
+    margin: 0em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 5em;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+    padding-top: 1em;
+    color: rgb(87, 76, 236);
+    font-style: oblique;
+    font-size: 5em;
+}
+
+.flex-add-contain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
