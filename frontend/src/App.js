@@ -1,27 +1,29 @@
 import './App.css';
-import CreateAccount from './components/CreateAccount';
-import Home from './components/Home';
-import Login from './components/Login';
-import ManageUsers from './components/ManageUsers';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Header from './components/Header';
+import AddCP from './components/AddCP';
+import CPList from './components/CPList';
+import bruce2 from '../src/bruce2.jpg';
+import EditCP from './components/EditCP';
+import ProgressCP from './components/ProgressCP';
+import contactCP from './components/contactCP';
+
+import {BrowserRouter as Router,Route} from "react-router-dom"
 
 function App() {
-  return (
+  return ( 
     <Router>
-      <div>
-        <Switch>
-          <Route path="/" exact component={Login}/>
-          <Route path='/createAccountPage' component={CreateAccount}/>
-          <Route path='/homePage' component={Home}/>
-          <Route path='/manageUsers' component={ManageUsers}/>
-        </Switch>
+      
+       <div style={{ backgroundImage: `url(${bruce2})`,  backgroundPosition:'center', backgroundSize:'cover' , height:'1050px'}}>
+         <Route path="/" exact component={Header}/>
+        <Route path="/add" exact component={AddCP}/>
+        <Route path="/read" exact component={CPList} />
+        <Route path="/update/:id" exact component={EditCP}/>
+        <Route path="/progress" exact component={ProgressCP}/>
+        <Route path="/client" exact component={contactCP}/>
+       
       </div>
     </Router>
   );
 }
 
 export default App;
-
-
-
-      

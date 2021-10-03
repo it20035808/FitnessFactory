@@ -1,51 +1,38 @@
-//-------------------------START OF IMPORTS-----------------------------------
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
 const app = express();
-//dotenv.config(); not needed
-//passport-local and related imports
-const passport = require("passport");
-const passportLocal = require("passport-local");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
+require("dotenv").config();
+const PORT = process.env.PORT || 8070;
 
-//-------------------------START OF MIDDELWARE--------------------------------
-app.use(express.json()); //app.use(bodyParser.json()) depreciated
-app.use(cors());//cors
-app.use(session({
-    secret: "secretcode",
-    resave: true,
-    saveUninitialized: true
-}));
-app.use(cookieParser("secretcode"))
-app.use(passport.initialize());//initialise passport
-app.use(passport.session());//initialise passport session
-require('./passportConfig')(passport);//require passport config file and pass instance of passport
-//-------------------------START OF ROUTES------------------------------------
-const userRouter = require("./routes/user");
+app.use(cors());
+app.use(bodyParser.json());
 
-app.use("/user", userRouter);
+const URL = process.env.DB_URL;
 
-const URL = process.env.MONGODB_URL;
-
-//-------------------------START OF DB CONNECTIONS----------------------------
 mongoose.connect(URL, {
-    useNewUrlParser: true,
+    useNewUrlParser: true, 
+
+useUnifiedTopology: true
 });
 
 const connection = mongoose.connection;
-connection.once("open", () => {
-    console.log("Mongodb Connection success!");
-}).on("error", (err) => {
-    console.log(err);
-});
+connection.once("open", ()=> {
 
-//-------------------------START SERVER----------------------------------------
-const PORT = process.env.PORT || 8070;
-
-app.listen(PORT, () => {
-    console.log('Server up and running on port: ' + PORT)
+    console.log("db success");
 })
+
+//to access the router
+const CPRouter = require("./routes/clientplans.js");
+http://localhost:8070/clientplan
+
+//when clientplan local host address get called on, it will load CPRouter
+app.use("/clientplan",CPRouter);
+
+
+app.listen(PORT, ()=> {
+    console.log(`server is running on ${PORT}`);
+})
+
