@@ -38,3 +38,5 @@ The koala is not an endangered species, but it is a near vulnerable species. One
 Chlamydia
 Many koalas are infected with Chlamydia. This is affecting the survival of the species. Koalas on French Island do not have the disease, and so groups of them are often moved to the mainland to repopulate some areas. The disease can cause blindness, pneumonia, urinary tract infections and reproductive tract infections.[11]
 
+
+# Kola in the house 🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨🐨
