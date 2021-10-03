@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
 import axios from 'axios';
 import Background from './back.jpg';
 
@@ -194,13 +192,13 @@ export default class StockAdd extends Component {
                         </div>
                         <hr />
                         <div style={{ margin: '5px' }}>
-                            <Button variant="contained" type="submit" color="primary" starticon={<SaveIcon />}>
+                            <button variant="contained" type="submit" className="btn btn-success">
                                 Save
-                            </Button>
+                            </button>
                             <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-                                <Button variant="contained" color="primary" onClick={this.onClickDemo}> Demo 1 </Button>
+                                <button variant="contained" class="btn btn-warning" onClick={this.onClickDemo}> Demo 1 </button>
                                 &nbsp;
-                                <Button variant="contained" color="primary" onClick={this.onClickDemo1}> Demo 2 </Button>
+                                <button variant="contained" class="btn btn-warning" onClick={this.onClickDemo1}> Demo 2 </button>
                             </div>
                         </div>
                     </form>

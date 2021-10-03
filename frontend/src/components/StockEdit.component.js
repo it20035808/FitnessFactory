@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
 import axios from 'axios';
 import Background from './back.jpg';
 
@@ -181,9 +179,9 @@ export default class StockEdit extends Component {
                         </div>
                         <hr />
                         <div style={{ margin: '5px' }}>
-                            <Button variant="contained" type="submit" color="primary" starticon={<SaveIcon />}>
+                            <button variant="contained" type="submit" className="btn btn-success">
                                 Save
-                            </Button>
+                            </button>
                         </div>
                     </form>
                     <hr />

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
 import Background from './back.jpg';
 
 export default class StockAdd extends Component {
@@ -89,9 +87,9 @@ export default class StockAdd extends Component {
                         </div>
                         <br></br>
                         <div style={{ margin: '5px', display: "flex", justifyContent: "center", alignItems: "center" }}>
-                            <Button variant="contained" type="submit" color="primary" starticon={<SaveIcon />}>
+                            <button variant="contained" type="submit" className="btn btn-primary">
                                 Login
-                            </Button>
+                            </button>
                         </div>
                     </form>
                     <hr />
