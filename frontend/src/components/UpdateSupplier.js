@@ -36,7 +36,7 @@ export default function EditSupplier(props) {
     }, [])
 
     const history = useHistory();
-    function updateProduct(e) {
+    function updateSupplier(e) {
         e.preventDefault();
 
         const pid = props.match.params.id
@@ -77,7 +77,7 @@ export default function EditSupplier(props) {
 
                 <span className="border">
                     <div className="shadow p-3 mb-5 bg-white rounded">
-                        <form onSubmit={updateProduct}>
+                        <form onSubmit={updateSupplier}>
                             <div className="form-group">
                                 <label for=" supplierId">Supplier Id</label>
                                 <input type="text" className="form-control" id=" supplierId" placeholder="Enter Supplier Id"
