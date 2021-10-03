@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
 import Background from './back.jpg';
@@ -70,7 +70,15 @@ export default class Stocklist extends Component {
           <Row>
             <Col><h1>Products Details Report {this.state.stocks.length}</h1></Col>
             <Col><div style={{ display: "flex", justifyContent: "right", alignItems: "right", marginTop: '10px' }}>
-              <Button onClick={() => window.print()}>PRINT</Button></div></Col>
+              <button className="btn btn-success" onClick={() => window.print()}>PRINT</button>
+              &nbsp;
+              <ReactHTMLTableToExcel
+                id="test-table-xls-button"
+                className="btn btn-success"
+                table="StockReport"
+                filename="StockReport"
+                sheet="Stock"
+                buttonText="Download as XLS" /></div></Col>
           </Row>
           <Row>
             <Col><h5>{new Date().toLocaleString() + ''}</h5></Col>
@@ -98,7 +106,7 @@ export default class Stocklist extends Component {
         </div>
 
         <div style={{ margin: '30px' }}>
-          <Table striped bordered hover variant="light">
+          <Table id="StockReport" striped bordered hover variant="light">
             <thead>
               <tr>
                 <th>ID</th>
