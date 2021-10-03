@@ -7,14 +7,3 @@ Supplier management is “JUST FITNESS THINGS” JUST FITNESS THINGS: JFT is bas
 
 ![best-free-open-source-gym-management-software](https://user-images.githubusercontent.com/88605573/135747391-6c1aef4b-0f7e-4129-be8f-720e6475f628.jpg)
 
-![image](https://user-images.githubusercontent.com/89182652/135747624-9dcae9a4-e478-4b53-a129-e2460abf8013.png)
-![image](https://user-images.githubusercontent.com/89182652/135747626-f89061cc-6e5b-43c9-adca-1a1d0f00ec3d.png)
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-![Uploading image.png…]()
-
