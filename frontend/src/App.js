@@ -5,6 +5,7 @@ import Background from './components/back1.jpg';
 
 import Navbar from "./components/navbar.component"
 import main from "./components/main.component"
+import login from "./components/login.component"
 
 import Equipment from "./components/Equipment.component";
 import EquipmentReport from "./components/EquipmentReport.component";
@@ -31,8 +32,8 @@ export default class App extends Component {
             }
 
             <br />
-            <Route path="/" exact component={main} />
-
+            <Route path="/" exact component={login} />
+            <Route path="/main" exact component={main} />
             <Route path="/equipment/" exact component={Equipment} />
             <Route path="/equipment/report" exact component={EquipmentReport} />
             <Route path="/equipment/details/:id" exact component={EquipmentDetails} />
