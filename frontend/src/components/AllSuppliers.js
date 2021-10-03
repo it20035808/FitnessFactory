@@ -4,6 +4,8 @@ import background from "../gymb10.jpg";
 import './ComponentStyles.css'
 import {useHistory} from "react-router";
 import Swal from "sweetalert2";
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 
 
 export default function ReadSupplier() {
@@ -69,7 +71,7 @@ export default function ReadSupplier() {
             }).map((val, key) => {
 
                 return <div>
-                    <table class="table table-dark rounded-lg">
+                    <table Id = "Supplier" class="table table-dark rounded-lg">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">Supplier Id</th>
@@ -121,6 +123,25 @@ export default function ReadSupplier() {
             <div class="grid place-items-center">
                     <button class="btn btn-primary bg-blue-400" type="button" onClick={() => gotoAdd()}
                     style={{width:"30em"}}>Add a new supplier</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<ReactHTMLTableToExcel
+
+        id="test-table-xls-button"
+
+        className="btn btn-primary"
+
+        table="Supplier"
+
+        filename="tablexls"
+
+        sheet="tablexls"
+
+        buttonText="Download as Excel file"/>
+
+
+
                 </div>
         </div>
     </div>)
