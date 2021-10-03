@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import workout1 from '../workout1.jpg';
 import { Link } from 'react-router-dom';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 
 export default class Home extends Component {
 constructor(props){
@@ -91,7 +93,7 @@ handleSearchArea = (e) =>{
 
             <br/>
 
-              <table className="table">
+              <table id= "Event" className="table">
                   <thead>
                     <tr>
                         
@@ -140,6 +142,14 @@ handleSearchArea = (e) =>{
 
             <button className="btn btn-success"><Link to="/add" style={{textDecoration:'none',color:'white'}}>Create New Event</Link></button>
 
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <ReactHTMLTableToExcel
+                    id="test-table-xls-button"
+                    className="btn btn-primary"
+                    table="Event"
+                    filename="tablexls"
+                    sheet="tablexls"
+                    buttonText="Download as Excel file"/>
         </div>
 
         </div>
