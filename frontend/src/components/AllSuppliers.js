@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import background from "../gymb10.jpg";
 import './ComponentStyles.css'
 import {useHistory} from "react-router";
 import Swal from "sweetalert2";
@@ -138,7 +137,7 @@ export default function ReadSupplier() {
 
         sheet="tablexls"
 
-        buttonText="Download as Excel file"/>
+        buttonText="Download as Execel file"/>
 
 
 

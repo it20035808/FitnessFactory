@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import background from "../gymb12.jpg";
 import axios from "axios";
 import './ComponentStyles.css'
 import Swal from "sweetalert2";
